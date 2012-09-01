@@ -54,6 +54,7 @@
 		1352495215F29A6300B98CF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1352495415F29A6300B98CF6 /* RPPhysicsOCTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPPhysicsOCTests.h; sourceTree = "<group>"; };
 		1352495515F29A6300B98CF6 /* RPPhysicsOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPPhysicsOCTests.m; sourceTree = "<group>"; };
+		1352495F15F29ACE00B98CF6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +83,7 @@
 		1352492915F29A6200B98CF6 = {
 			isa = PBXGroup;
 			children = (
+				1352495F15F29ACE00B98CF6 /* README.md */,
 				1352493915F29A6200B98CF6 /* RPPhysicsOC */,
 				1352494E15F29A6300B98CF6 /* RPPhysicsOCTests */,
 				1352493615F29A6200B98CF6 /* Frameworks */,
