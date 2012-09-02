@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		1352493815F29A6200B98CF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352493715F29A6200B98CF6 /* Foundation.framework */; };
 		1352493D15F29A6200B98CF6 /* RPPhysicsOC.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1352493C15F29A6200B98CF6 /* RPPhysicsOC.h */; };
-		1352493F15F29A6200B98CF6 /* RPPhysicsOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352493E15F29A6200B98CF6 /* RPPhysicsOC.m */; };
 		1352494715F29A6300B98CF6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494615F29A6300B98CF6 /* SenTestingKit.framework */; };
 		1352494915F29A6300B98CF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494815F29A6300B98CF6 /* UIKit.framework */; };
 		1352494A15F29A6300B98CF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352493715F29A6200B98CF6 /* Foundation.framework */; };
 		1352494D15F29A6300B98CF6 /* libRPPhysicsOC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352493415F29A6200B98CF6 /* libRPPhysicsOC.a */; };
 		1352495315F29A6300B98CF6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1352495115F29A6300B98CF6 /* InfoPlist.strings */; };
 		1352495615F29A6300B98CF6 /* RPPhysicsOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352495515F29A6300B98CF6 /* RPPhysicsOCTests.m */; };
+		1352496615F2CF0D00B98CF6 /* RPParticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352496515F2CF0D00B98CF6 /* RPParticle.m */; };
+		1352496915F2D43F00B98CF6 /* RPVector3.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352496815F2D43F00B98CF6 /* RPVector3.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,6 @@
 		1352493715F29A6200B98CF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1352493B15F29A6200B98CF6 /* RPPhysicsOC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RPPhysicsOC-Prefix.pch"; sourceTree = "<group>"; };
 		1352493C15F29A6200B98CF6 /* RPPhysicsOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPPhysicsOC.h; sourceTree = "<group>"; };
-		1352493E15F29A6200B98CF6 /* RPPhysicsOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPPhysicsOC.m; sourceTree = "<group>"; };
 		1352494515F29A6300B98CF6 /* RPPhysicsOCTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPPhysicsOCTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1352494615F29A6300B98CF6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		1352494815F29A6300B98CF6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -55,6 +55,11 @@
 		1352495415F29A6300B98CF6 /* RPPhysicsOCTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPPhysicsOCTests.h; sourceTree = "<group>"; };
 		1352495515F29A6300B98CF6 /* RPPhysicsOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPPhysicsOCTests.m; sourceTree = "<group>"; };
 		1352495F15F29ACE00B98CF6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		1352496315F2CD1E00B98CF6 /* RPTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPTypes.h; sourceTree = "<group>"; };
+		1352496415F2CF0D00B98CF6 /* RPParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticle.h; sourceTree = "<group>"; };
+		1352496515F2CF0D00B98CF6 /* RPParticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticle.m; sourceTree = "<group>"; };
+		1352496715F2D43F00B98CF6 /* RPVector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPVector3.h; sourceTree = "<group>"; };
+		1352496815F2D43F00B98CF6 /* RPVector3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPVector3.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +119,11 @@
 			isa = PBXGroup;
 			children = (
 				1352493C15F29A6200B98CF6 /* RPPhysicsOC.h */,
-				1352493E15F29A6200B98CF6 /* RPPhysicsOC.m */,
+				1352496415F2CF0D00B98CF6 /* RPParticle.h */,
+				1352496515F2CF0D00B98CF6 /* RPParticle.m */,
+				1352496315F2CD1E00B98CF6 /* RPTypes.h */,
+				1352496715F2D43F00B98CF6 /* RPVector3.h */,
+				1352496815F2D43F00B98CF6 /* RPVector3.m */,
 				1352493A15F29A6200B98CF6 /* Supporting Files */,
 			);
 			path = RPPhysicsOC;
@@ -245,7 +254,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1352493F15F29A6200B98CF6 /* RPPhysicsOC.m in Sources */,
+				1352496615F2CF0D00B98CF6 /* RPParticle.m in Sources */,
+				1352496915F2D43F00B98CF6 /* RPVector3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
