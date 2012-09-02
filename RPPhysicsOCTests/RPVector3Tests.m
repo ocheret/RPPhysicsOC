@@ -97,7 +97,8 @@
 {
     RPVector3 a = { TESTX, TESTY, TESTZ };
     RPVector3 *b = RPVector3AddScaledVectorTo(&a, &a, 2.0f);
-    STAssertEquals(&a, b, @"RPVector3AddScaledVectorTo didn't return its argument");
+    STAssertEquals(&a, b,
+                   @"RPVector3AddScaledVectorTo didn't return its argument");
     STAssertTrue(a.x == 3*TESTX && a.y == 3*TESTY && a.z == 3*TESTZ,
                  @"RPVector3AddScaledVectorTo failed");
 
@@ -217,7 +218,8 @@
 {
     RPVector3 a = { TESTX, TESTY, TESTZ };
     RPVector3 *b = RPVector3MultiplyScalarBy(&a, 3.0f);
-    STAssertEquals(&a, b, @"RPVector3MultiplyScalarBy didn't return its argument");
+    STAssertEquals(&a, b,
+                   @"RPVector3MultiplyScalarBy didn't return its argument");
     STAssertTrue(a.x == 3 * TESTX &&
                  a.y == 3 * TESTY &&
                  a.z == 3 * TESTZ,
@@ -238,69 +240,135 @@
 {
     RPVector3 a = { TESTX, TESTY, TESTZ };
     RPVector3 *b = RPVector3DivideScalarBy(&a, 2.0f);
-    STAssertEquals(&a, b, @"RPVector3DivideScalarBy didn't return its argument");
+    STAssertEquals(&a, b,
+                   @"RPVector3DivideScalarBy didn't return its argument");
     STAssertTrue(a.x == TESTX / 2.0f &&
                  a.y == TESTY / 2.0f &&
                  a.z == TESTZ / 2.0f,
                  @"RPVector3DivideScalarBy failed");
 }
 
-//static __inline__ RPVector3 RPVector3Maximum(RPVector3 *left, RPVector3 *right)
-//{
-//    RPVector3 max;
-//    max.x = (left->x > right->x) ? left->x : right->x;
-//    max.y = (left->y > right->y) ? left->y : right->y;
-//    max.z = (left->z > right->z) ? left->z : right->z;
-//    return max;
-//}
-//
-//static __inline__ RPVector3 *RPVector3MaximumTo(RPVector3 *me,
-//                                                RPVector3 *left,
-//                                                RPVector3 *right)
-//{
-//    me->x = (left->x > right->x) ? left->x : right->x;
-//    me->y = (left->y > right->y) ? left->y : right->y;
-//    me->z = (left->z > right->z) ? left->z : right->z;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 RPVector3Minimum(RPVector3 *left,
-//                                             RPVector3 *right)
-//{
-//    RPVector3 min;
-//    min.x = (left->x < right->x) ? left->x : right->x;
-//    min.y = (left->y < right->y) ? left->y : right->y;
-//    min.z = (left->z < right->z) ? left->z : right->z;
-//    return min;
-//}
-//
-//static __inline__ RPVector3 *RPVector3MinimumTo(RPVector3 *me,
-//                                                RPVector3 *left,
-//                                                RPVector3 *right)
-//{
-//    me->x = (left->x < right->x) ? left->x : right->x;
-//    me->y = (left->y < right->y) ? left->y : right->y;
-//    me->z = (left->z < right->z) ? left->z : right->z;
-//    return me;
-//}
-//
-//
-//static __inline__ BOOL RPVector3AllEqualToVector3(RPVector3 *left,
-//                                                  RPVector3 *right)
-//{
-//    return (left->x == right->x && left->y == right->y && left->z == right->z);
-//}
-//
-//static __inline__ BOOL RPVector3AllEqualToScalar(RPVector3 *a, RPReal value)
-//{
-//    return (a->x == value && a->y == value && a->z == value);
-//}
-//
+- (void)testMaximum
+{
+    RPVector3 a = { -TESTX, -TESTY, -TESTZ };
+    RPVector3 b = { TESTX, TESTY, TESTZ };
+    RPVector3 c;
+
+    c = RPVector3Maximum(&a, &b);
+    STAssertTrue(c.x == TESTX && c.y == TESTY && c.z == TESTZ,
+                 @"RPVector3Maximum a,b failed");
+    c = RPVector3Maximum(&b, &a);
+    STAssertTrue(c.x == TESTX && c.y == TESTY && c.z == TESTZ,
+                 @"RPVector3Maximum b,a failed");
+}
+
+- (void)testMaximumTo
+{
+    RPVector3 a = { -TESTX, -TESTY, -TESTZ };
+    RPVector3 b = { TESTX, TESTY, TESTZ };
+    RPVector3 c;
+
+    RPVector3 *d = RPVector3MaximumTo(&c, &a, &b);
+    STAssertTrue(c.x == TESTX && c.y == TESTY && c.z == TESTZ,
+                 @"RPVector3MaximumTo a,b failed");
+    d = RPVector3MaximumTo(&c, &b, &a);
+    STAssertTrue(c.x == TESTX && c.y == TESTY && c.z == TESTZ,
+                 @"RPVector3MaximumTo b,a failed");
+    STAssertEquals(&c, d, @"RPVector3MaximumTo didn't return its argument");
+}
+
+- (void)testMinimum
+{
+    RPVector3 a = { -TESTX, -TESTY, -TESTZ };
+    RPVector3 b = { TESTX, TESTY, TESTZ };
+    RPVector3 c;
+
+    c = RPVector3Minimum(&a, &b);
+    STAssertTrue(c.x == -TESTX && c.y == -TESTY && c.z == -TESTZ,
+                 @"RPVector3Minimum a,b failed");
+    c = RPVector3Minimum(&b, &a);
+    STAssertTrue(c.x == -TESTX && c.y == -TESTY && c.z == -TESTZ,
+                 @"RPVector3Minimum b,a failed");
+}
+
+- (void)testMinimumTo
+{
+    RPVector3 a = { -TESTX, -TESTY, -TESTZ };
+    RPVector3 b = { TESTX, TESTY, TESTZ };
+    RPVector3 c;
+
+    RPVector3 *d = RPVector3MinimumTo(&c, &a, &b);
+    STAssertTrue(c.x == -TESTX && c.y == -TESTY && c.z == -TESTZ,
+                 @"RPVector3MinimumTo a,b failed");
+    d = RPVector3MinimumTo(&c, &b, &a);
+    STAssertTrue(c.x == -TESTX && c.y == -TESTY && c.z == -TESTZ,
+                 @"RPVector3MaximumTo b,a failed");
+    STAssertEquals(&c, d, @"RPVector3MinimumTo didn't return its argument");
+}
+
+- (void)testAllEqualToVector3
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 b = a;
+    STAssertTrue(RPVector3AllEqualToVector3(&a, &b),
+                 @"RPvector3AllEqualToVector3 x,y,z failed");
+    for (int i = 0; i < 3; i++) {
+        RPReal tmp = a.v[i];
+        a.v[i] = -1000;
+        STAssertFalse(RPVector3AllEqualToVector3(&a, &b),
+                      @"RPVector3AllEqualtoVector3 %d failed", i);
+        a.v[i] = tmp;
+    }
+}
+
+- (void)testAllEqualToScalar
+{
+    RPVector3 a = { 100, 100, 100 };
+    STAssertTrue(RPVector3AllEqualToScalar(&a, 100),
+                 @"RPVector3AllEqualtoScalar failed");
+    for (int i = 0; i < 3; i++) {
+        a.v[i] = 123;
+        STAssertFalse(RPVector3AllEqualToScalar(&a, 100),
+                      @"RPVector3AllEqualtoScalar %d failed", i);
+        a.v[i] = 100;
+    }
+}
+
+- (void)testAllGreaterThanVector3
+{
+//    RPVector3 a = { TESTX, TESTY, TESTZ };
+//    RPVector3 b = a;
+//    STAssertTrue(RPVector3AllEqualToVector3(&a, &b),
+//                 @"RPvector3AllEqualToVector3 x,y,z failed");
+//    for (int i = 0; i < 3; i++) {
+//        RPReal tmp = a.v[i];
+//        a.v[i] = -1000;
+//        STAssertFalse(RPVector3AllEqualToVector3(&a, &b),
+//                      @"RPVector3AllEqualtoVector3 %d failed", i);
+//        a.v[i] = tmp;
+//    }
+}
+
 //static __inline__ BOOL RPVector3AllGreaterThanVector3(RPVector3 *left,
 //                                                      RPVector3 *right)
 //{
 //    return (left->x > right->x && left->y > right->y && left->z > right->z);
 //}
+
+
+- (void)testAllGreaterThanScalar
+{
+//    RPVector3 a = { 100, 100, 100 };
+//    STAssertTrue(RPVector3AllEqualToScalar(&a, 100),
+//                 @"RPVector3AllEqualtoScalar failed");
+//    for (int i = 0; i < 3; i++) {
+//        a.v[i] = 123;
+//        STAssertFalse(RPVector3AllEqualToScalar(&a, 100),
+//                      @"RPVector3AllEqualtoScalar %d failed", i);
+//        a.v[i] = 100;
+//    }
+}
+
 //
 //static __inline__ BOOL RPVector3AllGreaterThanScalar(RPVector3 *a, RPReal value)
 //{
@@ -318,11 +386,15 @@
 //{
 //    return (a->x >= value && a->y >= value && a->z >= value);
 //}
-//
-//static __inline__ RPReal RPVector3DotProduct(RPVector3 *left, RPVector3 *right)
-//{
-//    return left->x * right->x + left->y * right->y + left->z * right->z;
-//}
+
+- (void)testDotProduct
+{
+    RPVector3 a = { 1, 2, 3 };
+    RPVector3 b = { 100, 10, 1 };
+    RPReal dp = RPVector3DotProduct(&a, &b);
+    STAssertEquals(dp, 123.0f, @"RPVector3DotProduct failed %f vs 123.0", dp);
+}
+
 //
 //static __inline__ RPVector3 RPVector3CrossProduct(RPVector3 *left,
 //                                                  RPVector3 *right)
