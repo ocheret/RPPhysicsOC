@@ -20,168 +20,231 @@
     STAssertTrue((a.x == TESTX && a.y == TESTY && a.z == TESTZ),
                  @"RPVector3Make failed");
 }
-//
-//static __inline__ RPVector3 RPVector3Make(RPReal x, RPReal y, RPReal z)
-//{
-//    RPVector3 a = { x, y, z };
-//    return a;
-//}
-//
-//static __inline__ RPVector3 *RPVector3Set(RPVector3 *me,
-//                                          RPReal x, RPReal y, RPReal z)
-//{
-//    me->x = x; me->y = y; me->z = z;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 RPVector3MakeWithArray(RPReal values[3])
-//{
-//    RPVector3 a = { values[0], values[1], values[2] };
-//    return a;
-//}
-//
-//static __inline__ RPVector3 *RPVector3SetWithArray(RPVector3 *me,
-//                                                   RPReal values[3])
-//{
-//    me->x = values[0]; me->y = values[1]; me->z = values[2];
-//    return me;
-//}
-//
-//static __inline__ RPVector3 *RPVector3Clear(RPVector3 *me) {
-//    me->x = me->y = me->z = 0;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 RPVector3Negate(RPVector3 *vector)
-//{
-//    RPVector3 a = { -vector->x, -vector->y, -vector->z };
-//    return a;
-//}
-//
-//static __inline__ RPVector3 *RPVector3NegateOf(RPVector3 *me)
-//{
-//    me->x = -me->x; me->y = -me->y; me->z = -me->z;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 RPVector3Add(RPVector3 *left, RPVector3 *right)
-//{
-//    RPVector3 a = {
-//        left->x + right->x, left->y + right->y, left->z + right->z };
-//    return a;
-//}
-//
-//static __inline__ RPVector3 *RPVector3AddTo(RPVector3 *me, RPVector3 *right)
-//{
-//    me->x += right->x; me->y += right->y; me->z += right->z;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 *RPVector3AddScaledVectorTo(RPVector3 *me,
-//                                                        RPVector3 *vector,
-//                                                        RPReal scalar)
-//{
-//    me->x += vector->x * scalar;
-//    me->y += vector->x * scalar;
-//    me->z += vector->z * scalar;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 RPVector3Subtract(RPVector3 *left, RPVector3 *right)
-//{
-//    RPVector3 a = {
-//        left->x - right->x, left->y - right->y, left->z - right->z };
-//    return a;
-//}
-//
-//static __inline__ RPVector3 *RPVector3SubtractFrom(RPVector3 *me,
-//                                                   RPVector3 *right)
-//{
-//    me->x -= right->x; me->y -= right->y; me->z -= right->z;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 RPVector3Multiply(RPVector3 *left,
-//                                              RPVector3 *right)
-//{
-//    RPVector3 a = {
-//        left->x * right->x, left->y * right->y, left->z * right->z };
-//    return a;
-//}
-//
-//static __inline__ RPVector3 *RPVector3MultiplyBy(RPVector3 *me,
-//                                                 RPVector3 *right)
-//{
-//    me->x *= right->x; me->y *= right->y; me->z *= right->z;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 RPVector3Divide(RPVector3 *left,
-//                                            RPVector3 *right)
-//{
-//    RPVector3 a = {
-//        left->x / right->x, left->y / right->y, left->z / right->z };
-//    return a;
-//}
-//
-//static __inline__ RPVector3 *RPVector3DivideBy(RPVector3 *me,
-//                                               RPVector3 *right)
-//{
-//    me->x /= right->x; me->y /= right->y; me->z /= right->z;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 RPVector3AddScalar(RPVector3 *w, RPReal value)
-//{
-//    RPVector3 a = { w->x + value, w->y + value, w->z + value };
-//    return a;
-//}
-//
-//static __inline__ RPVector3* RPVector3AddScalarTo(RPVector3 *me, RPReal value)
-//{
-//    me->x += value; me->y += value; me->z += value;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 RPVector3SubtractScalar(RPVector3 *w, RPReal value)
-//{
-//    RPVector3 a = { w->x - value, w->y - value, w->z - value };
-//    return a;
-//}
-//
-//static __inline__ RPVector3 *RPVector3SubtractScalarFrom(RPVector3 *me,
-//                                                         RPReal value)
-//{
-//    me->x -= value; me->y -= value; me->z -= value;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 RPVector3MultiplyScalar(RPVector3 *w, RPReal value)
-//{
-//    RPVector3 a = { w->x * value, w->y * value, w->z * value };
-//    return a;
-//}
-//
-//static __inline__ RPVector3 *RPVector3MultiplyScalarBy(RPVector3 *me,
-//                                                       RPReal value)
-//{
-//    me->x *= value; me->y *= value; me->z *= value;
-//    return me;
-//}
-//
-//static __inline__ RPVector3 RPVector3DivideScalar(RPVector3 *w, RPReal value)
-//{
-//    RPVector3 a = { w->x / value, w->y / value, w->z / value };
-//    return a;
-//}
-//
-//static __inline__ RPVector3 *RPVector3DivideScalarBy(RPVector3 *me,
-//                                                     RPReal value)
-//{
-//    me->x /= value; me->y /= value; me->z /= value;
-//    return me;
-//}
-//
+
+- (void)testSet
+{
+    RPVector3 a = { 0.0f, 0.0f, 0.0f };
+    RPVector3 *b = RPVector3Set(&a, TESTX, TESTY, TESTZ);
+    STAssertEquals(&a, b, @"RPVector3Set didn't return its argument");
+    STAssertTrue((a.x == TESTX && a.y == TESTY && a.z == TESTZ),
+                 @"RPVector3Set failed");
+}
+
+- (void)testMakeWithArray
+{
+    RPReal values[] = { TESTX, TESTY, TESTZ };
+    RPVector3 a = RPVector3MakeWithArray(values);
+    STAssertTrue((a.x == TESTX && a.y == TESTY && a.z == TESTZ),
+                 @"RPVector3MakeWithArray failed");
+}
+
+- (void)testSetWithArray
+{
+    RPReal values[] = { TESTX, TESTY, TESTZ };
+    RPVector3 a = { 0.0f, 0.0f, 0.0f };
+    RPVector3 *b = RPVector3SetWithArray(&a, values);
+    STAssertEquals(&a, b, @"RPVector3SetWithArray didn't return its argument");
+    STAssertTrue((a.x == TESTX && a.y == TESTY && a.z == TESTZ),
+                 @"RPVector3SetWithArray failed");
+}
+
+- (void)testClear
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 *b = RPVector3Clear(&a);
+    STAssertEquals(&a, b, @"RPVector3SetClear didn't return its argument");
+    STAssertTrue(a.x == 0.0f && a.y == 0.0f && a.z == 0.0f,
+                 @"RPVector3Clear failed");
+}
+
+- (void)testNegate
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    a = RPVector3Negate(&a);
+    STAssertTrue(a.x == -TESTX && a.y == -TESTY && a.z == -TESTZ,
+                 @"RPVector3Negate failed");
+}
+
+- (void)testNegateOf
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 *b = RPVector3NegateOf(&a);
+    STAssertEquals(&a, b, @"RPVector3NegateOf didn't return its argument");
+    STAssertTrue(a.x == -TESTX && a.y == -TESTY && a.z == -TESTZ,
+                 @"RPVector3NegateOf failed");
+
+}
+
+- (void)testAdd
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 b = a;
+    a = RPVector3Add(&a, &b);
+    STAssertTrue(a.x == 2*TESTX && a.y == 2*TESTY && a.z == 2*TESTZ,
+                 @"RPVector3Add failed");
+}
+
+- (void)testAddTo
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 *b = RPVector3AddTo(&a, &a);
+    STAssertEquals(&a, b, @"RPVector3AddTo didn't return its argument");
+    STAssertTrue(a.x == 2*TESTX && a.y == 2*TESTY && a.z == 2*TESTZ,
+                 @"RPVector3AddTo failed");
+}
+
+- (void)testAddScaledVectorTo
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 *b = RPVector3AddScaledVectorTo(&a, &a, 2.0f);
+    STAssertEquals(&a, b, @"RPVector3AddScaledVectorTo didn't return its argument");
+    STAssertTrue(a.x == 3*TESTX && a.y == 3*TESTY && a.z == 3*TESTZ,
+                 @"RPVector3AddScaledVectorTo failed");
+
+}
+
+- (void)testSubtract
+{
+    RPVector3 a = { 2*TESTX, 2*TESTY, 2*TESTZ };
+    RPVector3 b = { TESTX, TESTY, TESTZ };
+    a = RPVector3Subtract(&a, &b);
+    STAssertTrue(a.x == TESTX && a.y == TESTY && a.z == TESTZ,
+                 @"RPVector3Subtract failed");
+}
+
+- (void)testSubtractFrom
+{
+    RPVector3 a = { 2*TESTX, 2*TESTY, 2*TESTZ };
+    RPVector3 c = { TESTX, TESTY, TESTZ };
+    RPVector3 *b = RPVector3SubtractFrom(&a, &c);
+    STAssertEquals(&a, b, @"RPVector3SubtractFrom didn't return its argument");
+    STAssertTrue(a.x == TESTX && a.y == TESTY && a.z == TESTZ,
+                 @"RPVector3SubtractFrom failed");
+}
+
+- (void)testMultiply
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 b = { 1.0f, 2.0f, 3.0f };
+    a = RPVector3Multiply(&a, &b);
+    STAssertTrue(a.x == TESTX && a.y == 2*TESTY && a.z == 3*TESTZ,
+                 @"RPVector3Multiply failed");
+}
+
+- (void)testMultiplyBy
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 c = { 1.0f, 2.0f, 3.0f };
+    RPVector3 *b = RPVector3MultiplyBy(&a, &c);
+    STAssertEquals(&a, b, @"RPVector3MultiplyBy didn't return its argument");
+    STAssertTrue(a.x == TESTX && a.y == 2*TESTY && a.z == 3*TESTZ,
+                 @"RPVector3MultiplyBy failed");
+}
+
+- (void)testDivide
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 b = { 1.0f, 2.0f, 3.0f };
+    a = RPVector3Divide(&a, &b);
+    STAssertTrue(a.x == TESTX && a.y == TESTY / 2.0f && a.z == TESTZ / 3.0f,
+                 @"RPVector3Divide failed");
+}
+
+- (void)testDivideBy
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 c = { 1.0f, 2.0f, 3.0f };
+    RPVector3 *b = RPVector3DivideBy(&a, &c);
+    STAssertEquals(&a, b, @"RPVector3DivideBy didn't return its argument");
+    STAssertTrue(a.x == TESTX && a.y == TESTY / 2.0f && a.z == TESTZ / 3.0f,
+                 @"RPVector3DivideBy failed");
+}
+
+- (void)testAddScalar
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    a = RPVector3AddScalar(&a, 1.0f);
+    STAssertTrue(a.x == 1.0f + TESTX &&
+                 a.y == 1.0f + TESTY &&
+                 a.z == 1.0f + TESTZ,
+                 @"RPVector3AddScalar failed");
+}
+
+- (void)testAddScalarTo
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 *b = RPVector3AddScalarTo(&a, 1.0f);
+    STAssertEquals(&a, b, @"RPVector3AddScalarTo didn't return its argument");
+    STAssertTrue(a.x == 1.0f + TESTX &&
+                 a.y == 1.0f + TESTY &&
+                 a.z == 1.0f + TESTZ,
+                 @"RPVector3AddScalarTo failed");
+}
+
+- (void)testSubtractScalar
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    a = RPVector3SubtractScalar(&a, 1.0f);
+    STAssertTrue(a.x == TESTX - 1.0f &&
+                 a.y == TESTY - 1.0f &&
+                 a.z == TESTZ - 1.0f,
+                 @"RPVector3SubtractScalar failed");
+}
+
+- (void)testSubtractScalarFrom
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 *b = RPVector3SubtractScalarFrom(&a, 1.0f);
+    STAssertEquals(&a, b,
+                   @"RPVector3SubtractScalarFrom didn't return its argument");
+    STAssertTrue(a.x == TESTX - 1.0f &&
+                 a.y == TESTY - 1.0f &&
+                 a.z == TESTZ - 1.0f,
+                 @"RPVector3SubtractScalarFrom failed");
+}
+
+- (void)testMultiplyScalar
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    a = RPVector3MultiplyScalar(&a, 3.0f);
+    STAssertTrue(a.x == 3 * TESTX &&
+                 a.y == 3 * TESTY &&
+                 a.z == 3 * TESTZ,
+                 @"RPVector3MultiplyScalar failed");
+}
+
+- (void)testMultiplyScalarBy
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 *b = RPVector3MultiplyScalarBy(&a, 3.0f);
+    STAssertEquals(&a, b, @"RPVector3MultiplyScalarBy didn't return its argument");
+    STAssertTrue(a.x == 3 * TESTX &&
+                 a.y == 3 * TESTY &&
+                 a.z == 3 * TESTZ,
+                 @"RPVector3MultiplyScalarBy failed");
+}
+
+- (void)testDivideScalar
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    a = RPVector3DivideScalar(&a, 2.0f);
+    STAssertTrue(a.x == TESTX / 2.0f &&
+                 a.y == TESTY / 2.0f &&
+                 a.z == TESTZ / 2.0f,
+                 @"RPVector3DivideScalar failed");
+}
+
+- (void)testDivideScalarBy
+{
+    RPVector3 a = { TESTX, TESTY, TESTZ };
+    RPVector3 *b = RPVector3DivideScalarBy(&a, 2.0f);
+    STAssertEquals(&a, b, @"RPVector3DivideScalarBy didn't return its argument");
+    STAssertTrue(a.x == TESTX / 2.0f &&
+                 a.y == TESTY / 2.0f &&
+                 a.z == TESTZ / 2.0f,
+                 @"RPVector3DivideScalarBy failed");
+}
+
 //static __inline__ RPVector3 RPVector3Maximum(RPVector3 *left, RPVector3 *right)
 //{
 //    RPVector3 max;

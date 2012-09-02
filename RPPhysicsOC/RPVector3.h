@@ -79,7 +79,7 @@ static __inline__ RPVector3 *RPVector3AddScaledVectorTo(RPVector3 *me,
                                                         RPReal scalar)
 {
     me->x += vector->x * scalar;
-    me->y += vector->x * scalar;
+    me->y += vector->y * scalar;
     me->z += vector->z * scalar;
     return me;
 }
@@ -273,9 +273,12 @@ static __inline__ RPVector3 *RPVector3CrossProductTo(RPVector3 *me,
                                                      RPVector3 *left,
                                                      RPVector3 *right)
 {
-    me->x = left->y * right->z - left->z * right->y;
-    me->y = left->z * right->x - left->x * right->z;
-    me->z = left->x * right->y - left->y * right->x;
+    RPVector3 a = {
+        left->y * right->z - left->z * right->y,
+        left->z * right->x - left->x * right->z,
+        left->x * right->y - left->y * right->x
+    };
+    *me = a;
     return me;
 }
 
