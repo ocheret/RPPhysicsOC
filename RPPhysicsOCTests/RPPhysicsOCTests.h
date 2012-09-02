@@ -7,7 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import <RPPhysicsOC/RPParticle.h>
 
 @interface RPPhysicsOCTests : SenTestCase
+
+@property (nonatomic, strong) RPParticle *particle;
 
 @end

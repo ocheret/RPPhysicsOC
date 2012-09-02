@@ -10,8 +10,23 @@
 #import "RPTypes.h"
 #import "RPVector3.h"
 
-@interface RPParticle : NSObject
+@interface RPParticle : NSObject {
+@protected
+    RPVector3 _position;
+    RPVector3 _velocity;
+    RPVector3 _acceleration;
+}
 
-@property (nonatomic) RPReal foo;
+@property (nonatomic) RPVector3 position;
+@property (nonatomic) RPVector3 velocity;
+@property (nonatomic) RPVector3 acceleration;
+@property (nonatomic) RPReal damping;
+@property (nonatomic) RPReal inverseMass;
+
+- (void)integrateForDuration:(RPReal)duration;
+- (void)clearAccumulatedForces;
+
+// Used only to support a unit test
+- (BOOL)verifyMemberAndPropertyEquivalence;
 
 @end

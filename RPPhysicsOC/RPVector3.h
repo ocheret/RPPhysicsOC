@@ -291,14 +291,14 @@ static __inline__ RPReal RPVector3Length(RPVector3 *w)
 
 static __inline__ RPVector3 RPVector3Normalize(RPVector3 *w)
 {
-    RPReal scale = RPRealValue(1.0) / RPVector3Length(w);
+    RPReal scale = 1.0f / RPVector3Length(w);
     RPVector3 a = { w->x * scale, w->y * scale, w->z * scale };
     return a;
 }
 
 static __inline__ RPVector3 *RPVector3NormalizeTo(RPVector3 *me, RPVector3 *w)
 {
-    RPReal scale = RPRealValue(1.0) / RPVector3Length(w);
+    RPReal scale = 1.0f / RPVector3Length(w);
     me->x = w->x * scale; me->y = w->y * scale; me->z = w->z * scale;
     return me;
 }

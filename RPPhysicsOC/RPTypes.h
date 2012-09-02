@@ -21,16 +21,14 @@ typedef float           RPReal32;
 typedef double          RPReal64;
 
 // We can use the preprocessor to change precision at some point
-typedef float           RPReal;
-#define RPReal_SQRT(x)  sqrtf(x)
-#define RPReal_ABS(x)   fabsf(x)
-#define RPSReal_SIN(x)  sinf(x)
-#define RPReal_COS(x)   cosf(x)
-#define RPReal_EXP(x)   expf(x)
-#define RPReal_POW(x)   powf(x)
-#define RPReal_MOD(x)   fmodf(x)
-
-#define RPRealValue(x)  ((float)x)
+typedef float               RPReal;
+#define RPReal_SQRT(x)      sqrtf(x)
+#define RPReal_ABS(x)       fabsf(x)
+#define RPSReal_SIN(x)      sinf(x)
+#define RPReal_COS(x)       cosf(x)
+#define RPReal_EXP(x)       expf(x)
+#define RPReal_POW(x, y)    powf(x, y)
+#define RPReal_MOD(x, y)    fmodf(x)
 
 #define RP_PI 3.14159f
 #define RPReal_MAX FLT_MAX

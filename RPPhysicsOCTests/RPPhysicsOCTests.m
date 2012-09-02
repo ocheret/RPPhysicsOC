@@ -15,6 +15,7 @@
     [super setUp];
     
     // Set-up code here.
+    self.particle = [[RPParticle alloc] init];
 }
 
 - (void)tearDown
@@ -24,9 +25,10 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testMemberAndPropertyEquivalence
 {
-    STFail(@"Unit tests are not implemented yet in RPPhysicsOCTests");
+    STAssertTrue([self.particle verifyMemberAndPropertyEquivalence],
+                 @"Member and Property are not equivalent");
 }
 
 @end
