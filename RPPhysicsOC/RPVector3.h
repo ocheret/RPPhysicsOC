@@ -18,6 +18,8 @@ union _RPVector3
 };
 typedef union _RPVector3 RPVector3;
 
+extern RPVector3 RP_GRAVITY;
+
 static __inline__ RPVector3 RPVector3Make(RPReal x, RPReal y, RPReal z)
 {
     RPVector3 a = { x, y, z };

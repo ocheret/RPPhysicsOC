@@ -10,7 +10,20 @@
 
 @implementation RPParticle
 
-int sweetie;
+- (RPVector3 *)positionRef
+{
+    return &_position;
+}
+
+- (RPVector3 *)velocityRef
+{
+    return &_velocity;
+}
+
+- (RPVector3 *)accelerationRef
+{
+    return &_acceleration;
+}
 
 - (void)integrateForDuration:(RPReal)duration
 {

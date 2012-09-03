@@ -18,9 +18,16 @@
 }
 
 @property (nonatomic) RPVector3 position;
+@property (nonatomic, readonly) RPVector3 *positionRef;
+
 @property (nonatomic) RPVector3 velocity;
+@property (nonatomic, readonly) RPVector3 *velocityRef;
+
 @property (nonatomic) RPVector3 acceleration;
+@property (nonatomic, readonly) RPVector3 *accelerationRef;
+
 @property (nonatomic) RPReal damping;
+
 @property (nonatomic) RPReal inverseMass;
 
 - (void)integrateForDuration:(RPReal)duration;
