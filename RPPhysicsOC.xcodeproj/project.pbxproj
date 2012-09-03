@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1352493815F29A6200B98CF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352493715F29A6200B98CF6 /* Foundation.framework */; };
-		1352493D15F29A6200B98CF6 /* RPPhysicsOC.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1352493C15F29A6200B98CF6 /* RPPhysicsOC.h */; };
 		1352494715F29A6300B98CF6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494615F29A6300B98CF6 /* SenTestingKit.framework */; };
 		1352494915F29A6300B98CF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494815F29A6300B98CF6 /* UIKit.framework */; };
 		1352494A15F29A6300B98CF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352493715F29A6200B98CF6 /* Foundation.framework */; };
@@ -18,16 +17,21 @@
 		1352496615F2CF0D00B98CF6 /* RPParticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352496515F2CF0D00B98CF6 /* RPParticle.m */; };
 		1352496915F2D43F00B98CF6 /* RPVector3.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352496815F2D43F00B98CF6 /* RPVector3.m */; };
 		1352496C15F331AE00B98CF6 /* RPFirework.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352496B15F331AD00B98CF6 /* RPFirework.m */; };
-		1352496D15F3A62200B98CF6 /* RPParticle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1352496415F2CF0D00B98CF6 /* RPParticle.h */; };
-		1352496E15F3A62200B98CF6 /* RPFirework.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1352496A15F331AD00B98CF6 /* RPFirework.h */; };
-		1352496F15F3A62200B98CF6 /* RPTypes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1352496315F2CD1E00B98CF6 /* RPTypes.h */; };
-		1352497015F3A62200B98CF6 /* RPVector3.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1352496715F2D43F00B98CF6 /* RPVector3.h */; };
 		1352497315F3AA1900B98CF6 /* RPVector3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352497215F3AA1900B98CF6 /* RPVector3Tests.m */; };
 		1352497915F3EEDE00B98CF6 /* RPParticleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352497815F3EEDE00B98CF6 /* RPParticleTests.m */; };
 		1377812715F4FC72003623C6 /* RPFireworkRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812615F4FC72003623C6 /* RPFireworkRule.m */; };
 		1377812B15F51672003623C6 /* RPRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812A15F51672003623C6 /* RPRandom.m */; };
 		1377812E15F5464A003623C6 /* RPRandomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812D15F5464A003623C6 /* RPRandomTests.m */; };
-		1377812F15F546DD003623C6 /* RPRandom.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1377812915F51672003623C6 /* RPRandom.h */; };
+		1377813515F55BD7003623C6 /* RPParticleForceRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377813415F55BD7003623C6 /* RPParticleForceRegistry.m */; };
+		1377813715F56E2E003623C6 /* RPFirework.h in Headers */ = {isa = PBXBuildFile; fileRef = 1352496A15F331AD00B98CF6 /* RPFirework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1377813815F56E2E003623C6 /* RPFireworkRule.h in Headers */ = {isa = PBXBuildFile; fileRef = 1377812515F4FC72003623C6 /* RPFireworkRule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1377813915F56E2E003623C6 /* RPParticle.h in Headers */ = {isa = PBXBuildFile; fileRef = 1352496415F2CF0D00B98CF6 /* RPParticle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1377813A15F56E2E003623C6 /* RPParticleForceGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1377813015F557CD003623C6 /* RPParticleForceGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1377813B15F56E2E003623C6 /* RPParticleForceRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = 1377813315F55BD7003623C6 /* RPParticleForceRegistry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1377813C15F56E2E003623C6 /* RPPhysicsOC.h in Headers */ = {isa = PBXBuildFile; fileRef = 1352493C15F29A6200B98CF6 /* RPPhysicsOC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1377813D15F56E2E003623C6 /* RPRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 1377812915F51672003623C6 /* RPRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1377813E15F56E2E003623C6 /* RPTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1352496315F2CD1E00B98CF6 /* RPTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1377813F15F56E2E003623C6 /* RPVector3.h in Headers */ = {isa = PBXBuildFile; fileRef = 1352496715F2D43F00B98CF6 /* RPVector3.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,12 +51,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				1377812F15F546DD003623C6 /* RPRandom.h in CopyFiles */,
-				1352496D15F3A62200B98CF6 /* RPParticle.h in CopyFiles */,
-				1352496E15F3A62200B98CF6 /* RPFirework.h in CopyFiles */,
-				1352496F15F3A62200B98CF6 /* RPTypes.h in CopyFiles */,
-				1352497015F3A62200B98CF6 /* RPVector3.h in CopyFiles */,
-				1352493D15F29A6200B98CF6 /* RPPhysicsOC.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +86,9 @@
 		1377812A15F51672003623C6 /* RPRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPRandom.m; sourceTree = "<group>"; };
 		1377812C15F5464A003623C6 /* RPRandomTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPRandomTests.h; sourceTree = "<group>"; };
 		1377812D15F5464A003623C6 /* RPRandomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPRandomTests.m; sourceTree = "<group>"; };
+		1377813015F557CD003623C6 /* RPParticleForceGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleForceGenerator.h; sourceTree = "<group>"; };
+		1377813315F55BD7003623C6 /* RPParticleForceRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleForceRegistry.h; sourceTree = "<group>"; };
+		1377813415F55BD7003623C6 /* RPParticleForceRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleForceRegistry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +153,9 @@
 				1377812615F4FC72003623C6 /* RPFireworkRule.m */,
 				1352496415F2CF0D00B98CF6 /* RPParticle.h */,
 				1352496515F2CF0D00B98CF6 /* RPParticle.m */,
+				1377813015F557CD003623C6 /* RPParticleForceGenerator.h */,
+				1377813315F55BD7003623C6 /* RPParticleForceRegistry.h */,
+				1377813415F55BD7003623C6 /* RPParticleForceRegistry.m */,
 				1352493C15F29A6200B98CF6 /* RPPhysicsOC.h */,
 				1377812915F51672003623C6 /* RPRandom.h */,
 				1377812A15F51672003623C6 /* RPRandom.m */,
@@ -198,6 +202,25 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		1377813615F56DF1003623C6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1377813715F56E2E003623C6 /* RPFirework.h in Headers */,
+				1377813815F56E2E003623C6 /* RPFireworkRule.h in Headers */,
+				1377813915F56E2E003623C6 /* RPParticle.h in Headers */,
+				1377813A15F56E2E003623C6 /* RPParticleForceGenerator.h in Headers */,
+				1377813B15F56E2E003623C6 /* RPParticleForceRegistry.h in Headers */,
+				1377813C15F56E2E003623C6 /* RPPhysicsOC.h in Headers */,
+				1377813D15F56E2E003623C6 /* RPRandom.h in Headers */,
+				1377813E15F56E2E003623C6 /* RPTypes.h in Headers */,
+				1377813F15F56E2E003623C6 /* RPVector3.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		1352493315F29A6200B98CF6 /* RPPhysicsOC */ = {
 			isa = PBXNativeTarget;
@@ -206,6 +229,7 @@
 				1352493015F29A6200B98CF6 /* Sources */,
 				1352493115F29A6200B98CF6 /* Frameworks */,
 				1352493215F29A6200B98CF6 /* CopyFiles */,
+				1377813615F56DF1003623C6 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -299,6 +323,7 @@
 				1352496C15F331AE00B98CF6 /* RPFirework.m in Sources */,
 				1377812715F4FC72003623C6 /* RPFireworkRule.m in Sources */,
 				1377812B15F51672003623C6 /* RPRandom.m in Sources */,
+				1377813515F55BD7003623C6 /* RPParticleForceRegistry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

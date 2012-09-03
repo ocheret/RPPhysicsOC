@@ -40,10 +40,13 @@
     // Damp the current velocity
     RPVector3MultiplyScalarBy(&_velocity, RPReal_POW(self.damping, duration));
 
-    // This will be used to accrue acceleration due to multiple forces
-    RPVector3 resultantAcceleration;
-    RPVector3Set(&resultantAcceleration,
-                 _acceleration.x, _acceleration.y, _acceleration.z);
+    // Compute acceleration due to accumulated resultant force
+    RPVector3 resultantAcceleration = _acceleration;
+    RPVector3AddScaledVectorTo(&resultantAcceleration, &_forceAccumulator,
+                               self.inverseMass);
+
+    // Update linear velocity from acceleration
+    RPVector3AddScaledVectorTo(&_velocity, &resultantAcceleration, duration);
 
     // Update velocity based on acceleration and duration
     RPVector3AddScaledVectorTo(&_velocity, &resultantAcceleration, duration);
@@ -53,7 +56,12 @@
 
 - (void)clearAccumulatedForces
 {
-    // XXX - clear something
+    RPVector3Clear(&_forceAccumulator);
+}
+
+- (void)addForce:(RPVector3 *)force
+{
+    RPVector3AddTo(&_forceAccumulator, force);
 }
 
 - (BOOL)verifyMemberAndPropertyEquivalence

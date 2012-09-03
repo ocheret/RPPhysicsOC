@@ -15,6 +15,7 @@
     RPVector3 _position;
     RPVector3 _velocity;
     RPVector3 _acceleration;
+    RPVector3 _forceAccumulator;
 }
 
 @property (nonatomic) RPVector3 position;
@@ -32,6 +33,7 @@
 
 - (void)integrateForDuration:(RPReal)duration;
 - (void)clearAccumulatedForces;
+- (void)addForce:(RPVector3 *)force;
 
 // Used only to support a unit test
 - (BOOL)verifyMemberAndPropertyEquivalence;
