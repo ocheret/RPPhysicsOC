@@ -53,22 +53,6 @@ static RPRandom *_repeatableInstance = nil;;
     return self;
 }
 
-- (int)nextInt
-{
-    char *oldState = setstate(_state);
-    int result = random();
-    setstate(oldState);
-    return result;
-}
-
-- (int)nextIntUnder:(int)max
-{
-    char *oldState = setstate(_state);
-    int result = random() % max;
-    setstate(oldState);
-    return result;
-}
-
 - (long)nextLong
 {
     char *oldState = setstate(_state);

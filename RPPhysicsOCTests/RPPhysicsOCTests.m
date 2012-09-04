@@ -31,4 +31,14 @@
                  @"Member and Property are not equivalent");
 }
 
+- (void)testPrimitiveSizes
+{
+
+    STAssertEquals(sizeof(RPInt16), (size_t)2, @"RPInt16 isn't 16 bits");
+    STAssertEquals(sizeof(RPint32), (size_t)4, @"RPInt32 isn't 32 bits");
+    STAssertEquals(sizeof(RPInt64), (size_t)8, @"RPInt64 isn't 64 bits");
+    STAssertEquals(sizeof(RPReal32), (size_t)4, @"RPReal32 isn't 32 bits");
+    STAssertEquals(sizeof(RPReal64), (size_t)8, @"RPReal64 isn't 64 bits");
+}
+
 @end

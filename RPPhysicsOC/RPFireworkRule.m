@@ -36,7 +36,7 @@
         RPVector3AddTo(&velocity, parent.velocityRef);
     } else {
         RPVector3 start;
-        start.x = 5 * ([random nextIntUnder:3] - 1);
+        start.x = 5 * ([random nextLongUnder:3] - 1);
         firework.position = start;
     }
 

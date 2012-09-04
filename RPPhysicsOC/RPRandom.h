@@ -18,8 +18,6 @@
 + (RPRandom *)getRepeatableInstance;
 - (RPRandom *)init;
 - (RPRandom *)initWithSeed:(unsigned)seed;
-- (int)nextInt;
-- (int)nextIntUnder:(int)max;
 - (long)nextLong;
 - (long)nextLongUnder:(long)max;
 - (RPReal)nextRealBetweenMin:(RPReal)min max:(RPReal)max;

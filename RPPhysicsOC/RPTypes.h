@@ -11,14 +11,14 @@
 
 // In theory we can put preprocessor directives to change types for any
 // particular platform
-typedef short           RPInt16;
-typedef unsigned short  RPUInt16;
-typedef int             RPint32;
-typedef unsigned int    RPUint32;
-typedef long            RPInt64;
-typedef unsigned long   RPUint64;
-typedef float           RPReal32;
-typedef double          RPReal64;
+typedef short                RPInt16;
+typedef unsigned short       RPUInt16;
+typedef int                  RPint32;
+typedef unsigned int         RPUint32;
+typedef long long            RPInt64;
+typedef unsigned long long   RPUint64;
+typedef float                RPReal32;
+typedef double               RPReal64;
 
 // We can use the preprocessor to change precision at some point
 typedef float               RPReal;
