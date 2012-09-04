@@ -1,16 +1,16 @@
 //
-//  RPParticleSpring.m
+//  RPParticleBungee.m
 //  RPPhysicsOC
 //
 //  Created by Charles Ocheret on 9/3/12.
 //  Copyright (c) 2012 Charles Ocheret. All rights reserved.
 //
 
-#import "RPParticleSpring.h"
+#import "RPParticleBungee.h"
 
-@implementation RPParticleSpring
+@implementation RPParticleBungee
 
-- (RPParticleSpring *)initWithParticle:(RPParticle *)other
+- (RPParticleBungee *)initWithParticle:(RPParticle *)other
                         springConstant:(RPReal)springConstant
                          restingLength:(RPReal)restingLength
 {
@@ -32,10 +32,14 @@
     // Calculate how far stretched or compressed the spring is
     RPReal extension = self.restingLength - magnitude;
 
-    // Calculate the final force and apply it
-    RPVector3MultiplyScalarBy(&vector,
-                              extension * self.springConstant / magnitude);
-    [particle addForce:&vector];
+    // Only exert a force if the spring is streched
+    if (extension < 0) {
+        // Calculate the final force and apply it
+        RPVector3MultiplyScalarBy(&vector,
+                                  extension * self.springConstant / magnitude);
+        [particle addForce:&vector];
+    }
 }
+
 
 @end

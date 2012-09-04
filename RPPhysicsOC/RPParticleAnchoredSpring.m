@@ -1,30 +1,36 @@
 //
-//  RPParticleSpring.m
+//  RPParticleAnchoredSpring.m
 //  RPPhysicsOC
 //
 //  Created by Charles Ocheret on 9/3/12.
 //  Copyright (c) 2012 Charles Ocheret. All rights reserved.
 //
 
-#import "RPParticleSpring.h"
+#import "RPParticleAnchoredSpring.h"
 
-@implementation RPParticleSpring
+@implementation RPParticleAnchoredSpring
 
-- (RPParticleSpring *)initWithParticle:(RPParticle *)other
-                        springConstant:(RPReal)springConstant
-                         restingLength:(RPReal)restingLength
+- (RPVector3 *)anchorRef
 {
-    self.other = other;
+    return &_anchor;
+}
+
+- (RPParticleAnchoredSpring *)initWithAnchor:(RPVector3 *)anchor
+                               springConstat:(RPReal)springConstant
+                               restingLength:(RPReal)restingLength
+{
+    *(self.anchorRef) = *anchor;
     self.springConstant = springConstant;
     self.restingLength = restingLength;
     return self;
 }
 
+
 - (void)updateForceOn:(RPParticle *)particle duration:(RPReal)duration
 {
     // Calculate the vector of the spring
     RPVector3 vector = *particle.positionRef;
-    RPVector3SubtractFrom(&vector, self.other.positionRef);
+    RPVector3SubtractFrom(&vector, self.anchorRef);
 
     // Calculate the magnitude of the vector
     RPReal magnitude = RPVector3Length(&vector);
