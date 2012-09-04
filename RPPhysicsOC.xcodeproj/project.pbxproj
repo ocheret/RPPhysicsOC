@@ -32,6 +32,10 @@
 		1377813D15F56E2E003623C6 /* RPRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 1377812915F51672003623C6 /* RPRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1377813E15F56E2E003623C6 /* RPTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1352496315F2CD1E00B98CF6 /* RPTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1377813F15F56E2E003623C6 /* RPVector3.h in Headers */ = {isa = PBXBuildFile; fileRef = 1352496715F2D43F00B98CF6 /* RPVector3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1377814A15F59444003623C6 /* RPParticleGravity.h in Headers */ = {isa = PBXBuildFile; fileRef = 1377814815F59444003623C6 /* RPParticleGravity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1377814B15F59444003623C6 /* RPParticleGravity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377814915F59444003623C6 /* RPParticleGravity.m */; };
+		1377814E15F59ECD003623C6 /* RPParticleDrag.h in Headers */ = {isa = PBXBuildFile; fileRef = 1377814C15F59ECC003623C6 /* RPParticleDrag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1377814F15F59ECD003623C6 /* RPParticleDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377814D15F59ECD003623C6 /* RPParticleDrag.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		1377813015F557CD003623C6 /* RPParticleForceGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleForceGenerator.h; sourceTree = "<group>"; };
 		1377813315F55BD7003623C6 /* RPParticleForceRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleForceRegistry.h; sourceTree = "<group>"; };
 		1377813415F55BD7003623C6 /* RPParticleForceRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleForceRegistry.m; sourceTree = "<group>"; };
+		1377814815F59444003623C6 /* RPParticleGravity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleGravity.h; sourceTree = "<group>"; };
+		1377814915F59444003623C6 /* RPParticleGravity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleGravity.m; sourceTree = "<group>"; };
+		1377814C15F59ECC003623C6 /* RPParticleDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleDrag.h; sourceTree = "<group>"; };
+		1377814D15F59ECD003623C6 /* RPParticleDrag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleDrag.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +162,10 @@
 				1352496415F2CF0D00B98CF6 /* RPParticle.h */,
 				1352496515F2CF0D00B98CF6 /* RPParticle.m */,
 				1377813015F557CD003623C6 /* RPParticleForceGenerator.h */,
+				1377814815F59444003623C6 /* RPParticleGravity.h */,
+				1377814915F59444003623C6 /* RPParticleGravity.m */,
+				1377814C15F59ECC003623C6 /* RPParticleDrag.h */,
+				1377814D15F59ECD003623C6 /* RPParticleDrag.m */,
 				1377813315F55BD7003623C6 /* RPParticleForceRegistry.h */,
 				1377813415F55BD7003623C6 /* RPParticleForceRegistry.m */,
 				1352493C15F29A6200B98CF6 /* RPPhysicsOC.h */,
@@ -216,6 +228,8 @@
 				1377813D15F56E2E003623C6 /* RPRandom.h in Headers */,
 				1377813E15F56E2E003623C6 /* RPTypes.h in Headers */,
 				1377813F15F56E2E003623C6 /* RPVector3.h in Headers */,
+				1377814A15F59444003623C6 /* RPParticleGravity.h in Headers */,
+				1377814E15F59ECD003623C6 /* RPParticleDrag.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +338,8 @@
 				1377812715F4FC72003623C6 /* RPFireworkRule.m in Sources */,
 				1377812B15F51672003623C6 /* RPRandom.m in Sources */,
 				1377813515F55BD7003623C6 /* RPParticleForceRegistry.m in Sources */,
+				1377814B15F59444003623C6 /* RPParticleGravity.m in Sources */,
+				1377814F15F59ECD003623C6 /* RPParticleDrag.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

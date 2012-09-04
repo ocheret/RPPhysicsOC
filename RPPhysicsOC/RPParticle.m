@@ -25,6 +25,18 @@
     return &_acceleration;
 }
 
+- (void)setMass:(RPReal)mass
+{
+    assert(mass != 0);
+    self.inverseMass = (RPReal)1.0 / mass;
+}
+
+- (RPReal)mass
+{
+    return (self.inverseMass == 0) ?
+        RPReal_MAX : ((RPReal)1.0 / self.inverseMass);
+}
+
 - (void)integrateForDuration:(RPReal)duration
 {
     // If mass is infinite then we have an immovable object and we're done
@@ -62,6 +74,11 @@
 - (void)addForce:(RPVector3 *)force
 {
     RPVector3AddTo(&_forceAccumulator, force);
+}
+
+- (BOOL)hasFiniteMass
+{
+    return self.inverseMass > 0.0f;
 }
 
 - (BOOL)verifyMemberAndPropertyEquivalence

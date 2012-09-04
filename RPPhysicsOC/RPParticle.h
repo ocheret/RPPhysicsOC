@@ -31,9 +31,12 @@
 
 @property (nonatomic) RPReal inverseMass;
 
+@property (nonatomic) RPReal mass;
+
 - (void)integrateForDuration:(RPReal)duration;
 - (void)clearAccumulatedForces;
 - (void)addForce:(RPVector3 *)force;
+- (BOOL)hasFiniteMass;
 
 // Used only to support a unit test
 - (BOOL)verifyMemberAndPropertyEquivalence;
