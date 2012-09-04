@@ -44,6 +44,8 @@
 		1377815B15F5AF34003623C6 /* RPParticleBungee.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377815915F5AF34003623C6 /* RPParticleBungee.m */; };
 		1377816215F65AD5003623C6 /* RPParticleBuoyancy.h in Headers */ = {isa = PBXBuildFile; fileRef = 1377816015F65AD5003623C6 /* RPParticleBuoyancy.h */; };
 		1377816315F65AD5003623C6 /* RPParticleBuoyancy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377816115F65AD5003623C6 /* RPParticleBuoyancy.m */; };
+		1377816615F66E18003623C6 /* RPParticleContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 1377816415F66E18003623C6 /* RPParticleContact.h */; };
+		1377816715F66E18003623C6 /* RPParticleContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377816515F66E18003623C6 /* RPParticleContact.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		1377815915F5AF34003623C6 /* RPParticleBungee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleBungee.m; sourceTree = "<group>"; };
 		1377816015F65AD5003623C6 /* RPParticleBuoyancy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleBuoyancy.h; sourceTree = "<group>"; };
 		1377816115F65AD5003623C6 /* RPParticleBuoyancy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleBuoyancy.m; sourceTree = "<group>"; };
+		1377816415F66E18003623C6 /* RPParticleContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleContact.h; sourceTree = "<group>"; };
+		1377816515F66E18003623C6 /* RPParticleContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleContact.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,8 @@
 				1377815C15F65957003623C6 /* ForceGenerators */,
 				1352493A15F29A6200B98CF6 /* Supporting Files */,
 				1377815D15F659D0003623C6 /* Utility */,
+				1377816415F66E18003623C6 /* RPParticleContact.h */,
+				1377816515F66E18003623C6 /* RPParticleContact.m */,
 			);
 			path = RPPhysicsOC;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 				1377815615F5AA5B003623C6 /* RPParticleAnchoredSpring.h in Headers */,
 				1377815A15F5AF34003623C6 /* RPParticleBungee.h in Headers */,
 				1377816215F65AD5003623C6 /* RPParticleBuoyancy.h in Headers */,
+				1377816615F66E18003623C6 /* RPParticleContact.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +411,7 @@
 				1377815715F5AA5B003623C6 /* RPParticleAnchoredSpring.m in Sources */,
 				1377815B15F5AF34003623C6 /* RPParticleBungee.m in Sources */,
 				1377816315F65AD5003623C6 /* RPParticleBuoyancy.m in Sources */,
+				1377816715F66E18003623C6 /* RPParticleContact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
