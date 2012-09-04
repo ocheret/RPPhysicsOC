@@ -30,7 +30,7 @@
 {
     // Calculate the vector of the spring
     RPVector3 vector = *particle.positionRef;
-    RPVector3SubtractFrom(&vector, self.anchorRef);
+    RPVector3Subtract(&vector, self.anchorRef);
 
     // Calculate the magnitude of the vector
     RPReal magnitude = RPVector3Length(&vector);
@@ -39,8 +39,8 @@
     RPReal extension = self.restingLength - magnitude;
 
     // Calculate the final force and apply it
-    RPVector3MultiplyScalarBy(&vector,
-                              extension * self.springConstant / magnitude);
+    RPVector3MultiplyScalar(&vector,
+                            extension * self.springConstant / magnitude);
     [particle addForce:&vector];
 }
 

@@ -32,8 +32,8 @@
     // Compute relative velocity
     RPVector3 relativeVelocity = *self.particleA.velocityRef;
     if (nil != self.particleB) {
-        RPVector3SubtractFrom(&relativeVelocity,
-                              self.particleB.velocityRef);
+        RPVector3Subtract(&relativeVelocity,
+                          self.particleB.velocityRef);
     }
 
     // Compute the speed along the contact normal
@@ -73,14 +73,14 @@
 
     // Calculate the impulse along the contact normal
     RPVector3 impulseVector = *self.normalRef;
-    RPVector3MultiplyScalarBy(&impulseVector, impulse);
+    RPVector3MultiplyScalar(&impulseVector, impulse);
 
     // Apply impulses
-    RPVector3AddScaledVectorTo(self.particleA.velocityRef, &impulseVector,
-                               self.particleA.inverseMass);
+    RPVector3AddScaledVector(self.particleA.velocityRef, &impulseVector,
+                             self.particleA.inverseMass);
     if (self.particleB) {
-        RPVector3AddScaledVectorTo(self.particleB.velocityRef,
-                                   &impulseVector, -self.particleB.inverseMass);
+        RPVector3AddScaledVector(self.particleB.velocityRef,
+                                 &impulseVector, -self.particleB.inverseMass);
     }
 }
 

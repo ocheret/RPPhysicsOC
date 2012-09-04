@@ -13,7 +13,6 @@
     RPVector3 _gravity;
 }
 
-@property (nonatomic) RPVector3 gravity;
 @property (nonatomic, readonly) RPVector3 *gravityRef;
 
 - (RPParticleGravity *)initWithGravity:(RPVector3 *)gravityRef;

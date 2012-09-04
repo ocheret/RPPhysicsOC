@@ -35,11 +35,9 @@ typedef struct _RPFireworkPayload RPFireworkPayload;
 @property (nonatomic) RPReal maxLifespan;
 
 // The minimum relative velocity of this firework
-@property (nonatomic) RPVector3 minVelocity;
 @property (nonatomic, readonly) RPVector3 *minVelocityRef;
 
 // The maxiumum relative velocity of this firework
-@property (nonatomic) RPVector3 maxVelocity;
 @property (nonatomic, readonly) RPVector3 *maxVelocityRef;
 
 // The damping of this firework type

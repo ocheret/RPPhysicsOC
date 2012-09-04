@@ -24,7 +24,7 @@
 {
     // Calculate the vector of the spring
     RPVector3 vector = *particle.positionRef;
-    RPVector3SubtractFrom(&vector, self.other.positionRef);
+    RPVector3Subtract(&vector, self.other.positionRef);
 
     // Calculate the magnitude of the vector
     RPReal magnitude = RPVector3Length(&vector);
@@ -35,8 +35,8 @@
     // Only exert a force if the spring is streched
     if (extension < 0) {
         // Calculate the final force and apply it
-        RPVector3MultiplyScalarBy(&vector,
-                                  extension * self.springConstant / magnitude);
+        RPVector3MultiplyScalar(&vector,
+                                extension * self.springConstant / magnitude);
         [particle addForce:&vector];
     }
 }

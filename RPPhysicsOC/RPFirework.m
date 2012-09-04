@@ -22,7 +22,7 @@
     self.lifespan += duration;
 
     // If our life is over or if we have moved underground we should expire
-    return (self.lifespan < 0) || (self.position.y < 0);
+    return (self.lifespan < 0) || (self.positionRef->y < 0);
 }
 
 @end

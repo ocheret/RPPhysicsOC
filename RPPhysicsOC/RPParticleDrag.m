@@ -27,7 +27,7 @@
     RPReal dragCoefficient = (self.k1 + self.k2 * magnitude) * magnitude;
 
     // Calculate and apply the drag force
-    RPVector3MultiplyScalarBy(&force, -dragCoefficient / magnitude);
+    RPVector3MultiplyScalar(&force, -dragCoefficient / magnitude);
     [particle addForce:&force];
 }
 

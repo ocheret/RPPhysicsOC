@@ -14,7 +14,6 @@
     RPVector3 _anchor;
 }
 
-@property (nonatomic) RPVector3 anchor;
 @property (nonatomic, readonly) RPVector3 *anchorRef;
 @property (nonatomic) RPReal springConstant;
 @property (nonatomic) RPReal restingLength;

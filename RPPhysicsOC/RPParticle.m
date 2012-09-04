@@ -47,21 +47,21 @@
     assert(duration > 0.0f); // XXX - we need to handle errors better
 
     // Update position based on velocity and duration
-    RPVector3AddScaledVectorTo(&_position, &_velocity, duration);
+    RPVector3AddScaledVector(&_position, &_velocity, duration);
 
     // Damp the current velocity
-    RPVector3MultiplyScalarBy(&_velocity, RPReal_POW(self.damping, duration));
+    RPVector3MultiplyScalar(&_velocity, RPReal_POW(self.damping, duration));
 
     // Compute acceleration due to accumulated resultant force
     RPVector3 resultantAcceleration = _acceleration;
-    RPVector3AddScaledVectorTo(&resultantAcceleration, &_forceAccumulator,
-                               self.inverseMass);
+    RPVector3AddScaledVector(&resultantAcceleration, &_forceAccumulator,
+                             self.inverseMass);
 
     // Update linear velocity from acceleration
-    RPVector3AddScaledVectorTo(&_velocity, &resultantAcceleration, duration);
+    RPVector3AddScaledVector(&_velocity, &resultantAcceleration, duration);
 
     // Update velocity based on acceleration and duration
-    RPVector3AddScaledVectorTo(&_velocity, &resultantAcceleration, duration);
+    RPVector3AddScaledVector(&_velocity, &resultantAcceleration, duration);
 
     [self clearAccumulatedForces];
 }
@@ -73,7 +73,7 @@
 
 - (void)addForce:(RPVector3 *)force
 {
-    RPVector3AddTo(&_forceAccumulator, force);
+    RPVector3Add(&_forceAccumulator, force);
 }
 
 - (BOOL)hasFiniteMass

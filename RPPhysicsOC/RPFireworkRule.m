@@ -32,23 +32,23 @@
     RPVector3 velocity;
     if (nil != parent) {
         // Position and velocity are based on the parent
-        firework.position = parent.position;
-        RPVector3AddTo(&velocity, parent.velocityRef);
+        *firework.positionRef = *parent.positionRef;
+        RPVector3Add(&velocity, parent.velocityRef);
     } else {
         RPVector3 start;
         start.x = 5 * ([random nextLongUnder:3] - 1);
-        firework.position = start;
+        *firework.positionRef = start;
     }
 
     RPVector3 tmp = [random nextVector3BetweenMin:&_minVelocity
                                               max:&_maxVelocity];
-    RPVector3AddTo(&velocity, &tmp);
-    firework.velocity = velocity;
+    RPVector3Add(&velocity, &tmp);
+    *firework.velocityRef = velocity;
 
     // Only gravity is involved so just set all masses to 1
     firework.inverseMass = 1;
     firework.damping = self.damping;
-    firework.acceleration = RP_GRAVITY;
+    *firework.accelerationRef = RP_GRAVITY;
     [firework clearAccumulatedForces];
 }
 
