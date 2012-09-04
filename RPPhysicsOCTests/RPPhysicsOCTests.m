@@ -25,12 +25,6 @@
     [super tearDown];
 }
 
-- (void)testMemberAndPropertyEquivalence
-{
-    STAssertTrue([self.particle verifyMemberAndPropertyEquivalence],
-                 @"Member and Property are not equivalent");
-}
-
 - (void)testPrimitiveSizes
 {
 

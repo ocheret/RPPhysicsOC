@@ -38,7 +38,4 @@
 - (void)addForce:(RPVector3 *)force;
 - (BOOL)hasFiniteMass;
 
-// Used only to support a unit test
-- (BOOL)verifyMemberAndPropertyEquivalence;
-
 @end

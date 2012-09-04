@@ -81,14 +81,4 @@
     return self.inverseMass > 0.0f;
 }
 
-- (BOOL)verifyMemberAndPropertyEquivalence
-{
-    RPVector3Set(&_position, 0.0f, 0.0f, 0.0f);
-    self.position = RPVector3Make(1.0f, 2.0f, 3.0f);
-    RPVector3Set(&_position, 100.0f, 200.0f, 300.0f);
-    return (self.position.x == 100.0f &&
-            self.position.y == 200.0f &&
-            self.position.z == 300.0f);
-}
-
 @end
