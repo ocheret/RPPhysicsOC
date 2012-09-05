@@ -59,17 +59,17 @@
 
     // Compute total mass of movable particles (ignore missing or infinite mass
     // particles)
-    RPReal massA = (self.particleA.inverseMass > 0) ? self.particleA.mass : 0;
-    RPReal massB = (nil != self.particleB && self.particleB.inverseMass > 0) ?
-    self.particleB.mass : 0;
-    RPReal totalMass = massA + massB;
-    if (totalMass == 0) {
+    RPReal totalInverseMass = self.particleA.inverseMass;
+    if (nil != self.particleB) {
+        totalInverseMass += self.particleB.inverseMass;
+    }
+    if (totalInverseMass <= 0) {
         // There are no movable objects to receive an impulse
         return;
     }
 
     // Calculate the impulse magnitude to apply
-    RPReal impulse = deltaSpeed * totalMass;
+    RPReal impulse = deltaSpeed / totalInverseMass;
 
     // Calculate the impulse along the contact normal
     RPVector3 impulseVector = *self.normalRef;
