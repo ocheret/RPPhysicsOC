@@ -39,7 +39,7 @@
 {
     // Compute relative velocity
     RPVector3 relativeVelocity = *self.particleA.velocityRef;
-    if (nil != self.particleB) {
+    if (self.particleB) {
         RPVector3Subtract(&relativeVelocity,
                           self.particleB.velocityRef);
     }
@@ -68,7 +68,7 @@
     // Compute sum of inverse masses of movable particles (ignore missing or
     // infinite mass particles)
     RPReal totalInverseMass = self.particleA.inverseMass;
-    if (nil != self.particleB) {
+    if (self.particleB) {
         totalInverseMass += self.particleB.inverseMass;
     }
     if (totalInverseMass <= 0) {
@@ -102,7 +102,7 @@
     // Compute sum of inverse masses of movable particles (ignore missing or
     // infinite mass particles)
     RPReal totalInverseMass = self.particleA.inverseMass;
-    if (nil != self.particleB) {
+    if (self.particleB) {
         totalInverseMass += self.particleB.inverseMass;
     }
     if (totalInverseMass <= 0) {
@@ -119,9 +119,9 @@
     RPVector3Clear(self.movementARef);
     RPVector3AddScaledVector(self.movementARef, &penetrationDirection,
                              self.particleA.inverseMass);
-    if (nil != self.particleB) {
+    if (self.particleB) {
         RPVector3AddScaledVector(self.movementBRef, &penetrationDirection,
-                                 self.particleB.inverseMass);
+                                 -self.particleB.inverseMass);
     } else {
         RPVector3Clear(self.movementBRef);
     }

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RPParticle.h>
+#import "RPParticle.h"
 
 @interface RPParticleContact : NSObject {
     @protected
@@ -29,6 +29,13 @@
                                particle:(RPParticle *)particleB
                             restitution:(RPReal)restitution
                                  normal:(RPVector3 *)normal;
+
 - (void)resolveForDuration:(RPReal)duration;
+
+- (RPReal)calculateSeparatingSpeed;
+
+- (void)resolveVelocityForDuration:(RPReal)duration;
+
+- (void)resolveInterpenetrationForDuration:(RPReal)duration;
 
 @end

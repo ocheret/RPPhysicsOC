@@ -37,6 +37,21 @@
         RPReal_MAX : ((RPReal)1.0 / self.inverseMass);
 }
 
+- (RPParticle *)initWithPosition:(RPVector3 *)position
+                        velocity:(RPVector3 *)velocity
+                    acceleration:(RPVector3 *)acceleration
+                     inverseMass:(RPReal)inverseMass
+                         damping:(RPReal)damping
+{
+    self = [super init];
+    if (position) *self.positionRef = *position;
+    if (velocity) *self.velocityRef = *velocity;
+    if (acceleration) *self.accelerationRef = *acceleration;
+    self.inverseMass = inverseMass;
+    self.damping = damping;
+    return self;
+}
+
 - (void)integrateForDuration:(RPReal)duration
 {
     // If mass is infinite then we have an immovable object and we're done

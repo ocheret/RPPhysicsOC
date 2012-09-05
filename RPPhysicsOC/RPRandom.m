@@ -18,7 +18,7 @@ static RPRandom *_repeatableInstance = nil;;
 
 + (RPRandom *)getDefaultInstance
 {
-    if (nil == _defaultInstance) {
+    if (!_defaultInstance) {
         _defaultInstance = [[RPRandom alloc] init];
     }
     return _defaultInstance;
@@ -26,7 +26,7 @@ static RPRandom *_repeatableInstance = nil;;
 
 + (RPRandom *)getRepeatableInstance
 {
-    if (nil == _repeatableInstance) {
+    if (!_repeatableInstance) {
         _repeatableInstance = [[RPRandom alloc]
                                initWithSeed:LARGEST_UNSIGNED_PRIME];
     }

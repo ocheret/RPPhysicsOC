@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1326F74915F7A77900A346E9 /* RPParticleContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1326F74815F7A77900A346E9 /* RPParticleContactTests.m */; };
 		1352493815F29A6200B98CF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352493715F29A6200B98CF6 /* Foundation.framework */; };
 		1352494715F29A6300B98CF6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494615F29A6300B98CF6 /* SenTestingKit.framework */; };
 		1352494915F29A6300B98CF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494815F29A6300B98CF6 /* UIKit.framework */; };
@@ -71,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1326F74715F7A77900A346E9 /* RPParticleContactTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleContactTests.h; sourceTree = "<group>"; };
+		1326F74815F7A77900A346E9 /* RPParticleContactTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleContactTests.m; sourceTree = "<group>"; };
 		1352493415F29A6200B98CF6 /* libRPPhysicsOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRPPhysicsOC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1352493715F29A6200B98CF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1352493B15F29A6200B98CF6 /* RPPhysicsOC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RPPhysicsOC-Prefix.pch"; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 		1352494E15F29A6300B98CF6 /* RPPhysicsOCTests */ = {
 			isa = PBXGroup;
 			children = (
+				1326F74715F7A77900A346E9 /* RPParticleContactTests.h */,
+				1326F74815F7A77900A346E9 /* RPParticleContactTests.m */,
 				1352497715F3EEDE00B98CF6 /* RPParticleTests.h */,
 				1352497815F3EEDE00B98CF6 /* RPParticleTests.m */,
 				1352495415F29A6300B98CF6 /* RPPhysicsOCTests.h */,
@@ -423,6 +428,7 @@
 				1352497315F3AA1900B98CF6 /* RPVector3Tests.m in Sources */,
 				1352497915F3EEDE00B98CF6 /* RPParticleTests.m in Sources */,
 				1377812E15F5464A003623C6 /* RPRandomTests.m in Sources */,
+				1326F74915F7A77900A346E9 /* RPParticleContactTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,6 +30,11 @@
 
 @property (nonatomic) RPReal mass;
 
+- (RPParticle *)initWithPosition:(RPVector3 *)position
+                        velocity:(RPVector3 *)velocity
+                    acceleration:(RPVector3 *)acceleration
+                     inverseMass:(RPReal)inverseMass
+                         damping:(RPReal)damping;
 - (void)integrateForDuration:(RPReal)duration;
 - (void)clearAccumulatedForces;
 - (void)addForce:(RPVector3 *)force;

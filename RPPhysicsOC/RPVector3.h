@@ -198,3 +198,7 @@ static __inline__ RPVector3 *RPVector3TrimTo(RPVector3 *me, RPReal size)
     }
     return me;
 }
+
+static __inline__ NSString *RPVector3Description(RPVector3 *me) {
+    return [NSString stringWithFormat:@"{%f, %f, %f}", me->x, me->y, me->z];
+}

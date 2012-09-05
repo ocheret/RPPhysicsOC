@@ -30,7 +30,7 @@
     firework.lifespan = [random nextRealBetweenMin:self.minLifespan max:self.maxLifespan];
 
     RPVector3 velocity;
-    if (nil != parent) {
+    if (parent) {
         // Position and velocity are based on the parent
         *firework.positionRef = *parent.positionRef;
         RPVector3Add(&velocity, parent.velocityRef);
