@@ -14,6 +14,14 @@
     return &_normal;
 }
 
+- (RPVector3 *)movementARef {
+    return &_movementA;
+}
+
+- (RPVector3 *)movementBRef {
+    return &_movementB;
+}
+
 - (RPParticleContact *)initWithParticle:(RPParticle *)particleA
                                particle:(RPParticle *)particleB
                             restitution:(RPReal)restitution
@@ -57,8 +65,8 @@
     // What is the change in velocity caused by this contact
     RPReal deltaSpeed = newSeparatingSpeed - separatingSpeed;
 
-    // Compute total mass of movable particles (ignore missing or infinite mass
-    // particles)
+    // Compute sum of inverse masses of movable particles (ignore missing or
+    // infinite mass particles)
     RPReal totalInverseMass = self.particleA.inverseMass;
     if (nil != self.particleB) {
         totalInverseMass += self.particleB.inverseMass;
@@ -86,7 +94,43 @@
 
 - (void)resolveInterpenetrationForDuration:(RPReal)duration
 {
-    // XXX
+    // If there is no penetration then we can skip this step
+    if (self.penetration <= 0) {
+        return;
+    }
+
+    // Compute sum of inverse masses of movable particles (ignore missing or
+    // infinite mass particles)
+    RPReal totalInverseMass = self.particleA.inverseMass;
+    if (nil != self.particleB) {
+        totalInverseMass += self.particleB.inverseMass;
+    }
+    if (totalInverseMass <= 0) {
+        // There are no movable objects to adjust
+        return;
+    }
+
+    // Compute amount of penetration resolution per unit inverse mass
+    RPVector3 penetrationDirection = *self.normalRef;
+    RPVector3MultiplyScalar(&penetrationDirection,
+                            self.penetration / totalInverseMass);
+
+    // Calculate the movement amounts
+    RPVector3Clear(self.movementARef);
+    RPVector3AddScaledVector(self.movementARef, &penetrationDirection,
+                             self.particleA.inverseMass);
+    if (nil != self.particleB) {
+        RPVector3AddScaledVector(self.movementBRef, &penetrationDirection,
+                                 self.particleB.inverseMass);
+    } else {
+        RPVector3Clear(self.movementBRef);
+    }
+
+    // Apply the pentration resolution
+    RPVector3Add(self.particleA.positionRef, self.movementARef);
+    if (self.particleB) {
+        RPVector3Add(self.particleB.positionRef, self.movementBRef);
+    }
 }
 
 - (void)resolveForDuration:(RPReal)duration
