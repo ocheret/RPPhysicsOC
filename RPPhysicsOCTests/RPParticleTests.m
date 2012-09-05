@@ -31,4 +31,22 @@
                                @"Damping did not reduce velocity as expected");
 }
 
+- (void)testAddForce
+{
+    RPParticle *p =
+    [[RPParticle alloc] initWithPosition:&(RPVector3){ 100, 100, 100 }
+                                velocity:&(RPVector3){ 10, 10, 10 }
+                            acceleration:&(RPVector3){ 0, 0, 0 }
+                             inverseMass:2
+                                 damping:1];
+    [p addForce:&(RPVector3){ 1, 1, 1 }];
+    [p integrateForDuration:1];
+    for (int i = 0; i < 3; i++) {
+        STAssertEqualsWithAccuracy(p.positionRef->v[i], (RPReal)110, 0.000001,
+                                   @"Position is wrong");
+        STAssertEqualsWithAccuracy(p.velocityRef->v[i], (RPReal)12, 0.000001,
+                                   @"Velocity is wrong");
+    }
+}
+
 @end

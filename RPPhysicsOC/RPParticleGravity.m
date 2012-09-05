@@ -25,7 +25,8 @@
 {
     if ([particle hasFiniteMass]) {
         RPVector3 force = _gravity;
-        [particle addForce:RPVector3MultiplyScalar(&force, particle.mass)];
+        [particle addForce:RPVector3DivideScalar(&force,
+                                                 particle.inverseMass)];
     }
 }
 

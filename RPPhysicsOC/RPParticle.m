@@ -72,9 +72,6 @@
     RPVector3AddScaledVector(&resultantAcceleration, &_forceAccumulator,
                              self.inverseMass);
 
-    // Update linear velocity from acceleration
-    RPVector3AddScaledVector(&_velocity, &resultantAcceleration, duration);
-
     // Update velocity based on acceleration and duration
     RPVector3AddScaledVector(&_velocity, &resultantAcceleration, duration);
 
