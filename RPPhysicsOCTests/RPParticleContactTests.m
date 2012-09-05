@@ -101,7 +101,18 @@
                                .000001f, @"Velocity B wrong");
 }
 
-//- (void)resolveInterpenetrationForDuration:(RPReal)duration;
+- (void)testResolveVelocityForDurationD
+{
+    RPParticleContact *contact =
+    [[RPParticleContact alloc] initWithParticle:particleA
+                                       particle:nil
+                                    restitution:1
+                                         normal:&contactNormal];
+    [contact resolveVelocityForDuration:1];
+    STAssertTrue(RPVector3AllEqualTo(particleA.velocityRef,
+                                     &(RPVector3){ 1, -1, 0 }),
+                 @"Velocity A wrong");
+}
 
 - (void)testResolveInterpenetrationForDuration
 {
