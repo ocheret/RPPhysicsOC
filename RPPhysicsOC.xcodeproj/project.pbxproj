@@ -12,7 +12,7 @@
 		1352494715F29A6300B98CF6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494615F29A6300B98CF6 /* SenTestingKit.framework */; };
 		1352494915F29A6300B98CF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494815F29A6300B98CF6 /* UIKit.framework */; };
 		1352494A15F29A6300B98CF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352493715F29A6200B98CF6 /* Foundation.framework */; };
-		1352494D15F29A6300B98CF6 /* libRPPhysicsOC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352493415F29A6200B98CF6 /* libRPPhysicsOC.a */; };
+		1352494D15F29A6300B98CF6 /* libRPPhysicsOC_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352493415F29A6200B98CF6 /* libRPPhysicsOC_iOS.a */; };
 		1352495315F29A6300B98CF6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1352495115F29A6300B98CF6 /* InfoPlist.strings */; };
 		1352495615F29A6300B98CF6 /* RPPhysicsOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352495515F29A6300B98CF6 /* RPPhysicsOCTests.m */; };
 		1352496615F2CF0D00B98CF6 /* RPParticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352496515F2CF0D00B98CF6 /* RPParticle.m */; };
@@ -74,7 +74,7 @@
 /* Begin PBXFileReference section */
 		1326F74715F7A77900A346E9 /* RPParticleContactTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleContactTests.h; sourceTree = "<group>"; };
 		1326F74815F7A77900A346E9 /* RPParticleContactTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleContactTests.m; sourceTree = "<group>"; };
-		1352493415F29A6200B98CF6 /* libRPPhysicsOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRPPhysicsOC.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1352493415F29A6200B98CF6 /* libRPPhysicsOC_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRPPhysicsOC_iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1352493715F29A6200B98CF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1352493B15F29A6200B98CF6 /* RPPhysicsOC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RPPhysicsOC-Prefix.pch"; sourceTree = "<group>"; };
 		1352493C15F29A6200B98CF6 /* RPPhysicsOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPPhysicsOC.h; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 				1352494715F29A6300B98CF6 /* SenTestingKit.framework in Frameworks */,
 				1352494915F29A6300B98CF6 /* UIKit.framework in Frameworks */,
 				1352494A15F29A6300B98CF6 /* Foundation.framework in Frameworks */,
-				1352494D15F29A6300B98CF6 /* libRPPhysicsOC.a in Frameworks */,
+				1352494D15F29A6300B98CF6 /* libRPPhysicsOC_iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +159,7 @@
 		1352493515F29A6200B98CF6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1352493415F29A6200B98CF6 /* libRPPhysicsOC.a */,
+				1352493415F29A6200B98CF6 /* libRPPhysicsOC_iOS.a */,
 				1352494515F29A6300B98CF6 /* RPPhysicsOCTests.octest */,
 			);
 			name = Products;
@@ -308,9 +308,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1352493315F29A6200B98CF6 /* RPPhysicsOC */ = {
+		1352493315F29A6200B98CF6 /* RPPhysicsOC_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1352495915F29A6300B98CF6 /* Build configuration list for PBXNativeTarget "RPPhysicsOC" */;
+			buildConfigurationList = 1352495915F29A6300B98CF6 /* Build configuration list for PBXNativeTarget "RPPhysicsOC_iOS" */;
 			buildPhases = (
 				1352493015F29A6200B98CF6 /* Sources */,
 				1352493115F29A6200B98CF6 /* Frameworks */,
@@ -321,14 +321,14 @@
 			);
 			dependencies = (
 			);
-			name = RPPhysicsOC;
+			name = RPPhysicsOC_iOS;
 			productName = RPPhysicsOC;
-			productReference = 1352493415F29A6200B98CF6 /* libRPPhysicsOC.a */;
+			productReference = 1352493415F29A6200B98CF6 /* libRPPhysicsOC_iOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		1352494415F29A6300B98CF6 /* RPPhysicsOCTests */ = {
+		1352494415F29A6300B98CF6 /* RPPhysicsOCTests_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1352495C15F29A6300B98CF6 /* Build configuration list for PBXNativeTarget "RPPhysicsOCTests" */;
+			buildConfigurationList = 1352495C15F29A6300B98CF6 /* Build configuration list for PBXNativeTarget "RPPhysicsOCTests_iOS" */;
 			buildPhases = (
 				1352494015F29A6300B98CF6 /* Sources */,
 				1352494115F29A6300B98CF6 /* Frameworks */,
@@ -340,7 +340,7 @@
 			dependencies = (
 				1352494C15F29A6300B98CF6 /* PBXTargetDependency */,
 			);
-			name = RPPhysicsOCTests;
+			name = RPPhysicsOCTests_iOS;
 			productName = RPPhysicsOCTests;
 			productReference = 1352494515F29A6300B98CF6 /* RPPhysicsOCTests.octest */;
 			productType = "com.apple.product-type.bundle";
@@ -366,8 +366,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1352493315F29A6200B98CF6 /* RPPhysicsOC */,
-				1352494415F29A6300B98CF6 /* RPPhysicsOCTests */,
+				1352493315F29A6200B98CF6 /* RPPhysicsOC_iOS */,
+				1352494415F29A6300B98CF6 /* RPPhysicsOCTests_iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -437,7 +437,7 @@
 /* Begin PBXTargetDependency section */
 		1352494C15F29A6300B98CF6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1352493315F29A6200B98CF6 /* RPPhysicsOC */;
+			target = 1352493315F29A6200B98CF6 /* RPPhysicsOC_iOS */;
 			targetProxy = 1352494B15F29A6300B98CF6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -566,7 +566,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1352495915F29A6300B98CF6 /* Build configuration list for PBXNativeTarget "RPPhysicsOC" */ = {
+		1352495915F29A6300B98CF6 /* Build configuration list for PBXNativeTarget "RPPhysicsOC_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1352495A15F29A6300B98CF6 /* Debug */,
@@ -575,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1352495C15F29A6300B98CF6 /* Build configuration list for PBXNativeTarget "RPPhysicsOCTests" */ = {
+		1352495C15F29A6300B98CF6 /* Build configuration list for PBXNativeTarget "RPPhysicsOCTests_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1352495D15F29A6300B98CF6 /* Debug */,
