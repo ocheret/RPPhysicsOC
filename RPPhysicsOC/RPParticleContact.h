@@ -21,7 +21,6 @@
 @property (nonatomic, readonly) RPVector3 *movementARef;
 @property (nonatomic, readonly) RPVector3 *movementBRef;
 @property (nonatomic) RPReal restitution;
-@property (nonatomic) RPVector3 normal;
 @property (nonatomic) RPReal penetration;
 @property (nonatomic, readonly) RPVector3 *normalRef;
 

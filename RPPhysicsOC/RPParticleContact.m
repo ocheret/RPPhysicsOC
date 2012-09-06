@@ -62,6 +62,28 @@
     // Apply restitution to determine the new separating speed
     RPReal newSeparatingSpeed = -separatingSpeed * self.restitution;
 
+    // Begin resting contact hack--------
+
+    // Check the velocity buildup due to acceleration only
+    RPVector3 accelerationVelocity = *self.particleA.accelerationRef;
+    if (self.particleB) {
+        RPVector3Subtract(&accelerationVelocity,
+                          self.particleB.accelerationRef);
+    }
+    RPReal accelerationSeparationSpeed = duration *
+        RPVector3DotProduct(&accelerationVelocity, self.normalRef);
+
+    // If we've got a closing velocity due to acceleration buildup, remove it
+    // from the new separating velocity
+    if (accelerationSeparationSpeed < 0) {
+        newSeparatingSpeed += accelerationSeparationSpeed * self.restitution;
+        if (newSeparatingSpeed < 0) {
+            newSeparatingSpeed = 0;
+        }
+    }
+
+    // End resting contact hack--------
+
     // What is the change in velocity caused by this contact
     RPReal deltaSpeed = newSeparatingSpeed - separatingSpeed;
 
