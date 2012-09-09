@@ -26,6 +26,7 @@
                                particle:(RPParticle *)particleB
                             restitution:(RPReal)restitution
                                  normal:(RPVector3 *)normal
+                            penetration:(RPReal)penetration
 {
     self = [super init];
     self.particleA = particleA;

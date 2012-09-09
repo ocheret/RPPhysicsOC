@@ -27,7 +27,8 @@
 - (RPParticleContact *)initWithParticle:(RPParticle *)particleA
                                particle:(RPParticle *)particleB
                             restitution:(RPReal)restitution
-                                 normal:(RPVector3 *)normal;
+                                 normal:(RPVector3 *)normal
+                            penetration:(RPReal)penetration;
 
 - (void)resolveForDuration:(RPReal)duration;
 
