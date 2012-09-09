@@ -48,7 +48,8 @@
     [[RPParticleContact alloc] initWithParticle:particleA
                                        particle:particleB
                                     restitution:1
-                                         normal:&contactNormal];
+                                         normal:&contactNormal
+                                    penetration:0];
 
     RPReal speed = [contact calculateSeparatingSpeed];
     STAssertEquals(speed, -2.0f, @"Separating speed incorrect");
@@ -60,7 +61,8 @@
     [[RPParticleContact alloc] initWithParticle:particleA
                                        particle:particleB
                                     restitution:1
-                                         normal:&contactNormal];
+                                         normal:&contactNormal
+                                    penetration:0];
     [contact resolveVelocityForDuration:1];
     STAssertTrue(RPVector3AllEqualTo(particleA.velocityRef,
                                      &(RPVector3){ 1, -1, 0 }),
@@ -76,7 +78,8 @@
     [[RPParticleContact alloc] initWithParticle:particleA
                                        particle:particleB
                                     restitution:.5
-                                         normal:&contactNormal];
+                                         normal:&contactNormal
+                                    penetration:0];
     [contact resolveVelocityForDuration:1];
     STAssertTrue(RPVector3AllEqualTo(particleA.velocityRef,
                                      &(RPVector3){ .5, -1, 0 }),
@@ -93,7 +96,8 @@
     [[RPParticleContact alloc] initWithParticle:particleA
                                        particle:particleB
                                     restitution:1
-                                         normal:&contactNormal];
+                                         normal:&contactNormal
+                                    penetration:0];
     [contact resolveVelocityForDuration:1];
     STAssertEqualsWithAccuracy(particleA.velocityRef->x, (RPReal)(1.0/3.0),
                                .000001f, @"Velocity A wrong");
@@ -107,7 +111,8 @@
     [[RPParticleContact alloc] initWithParticle:particleA
                                        particle:nil
                                     restitution:1
-                                         normal:&contactNormal];
+                                         normal:&contactNormal
+                                    penetration:0];
     [contact resolveVelocityForDuration:1];
     STAssertTrue(RPVector3AllEqualTo(particleA.velocityRef,
                                      &(RPVector3){ 1, -1, 0 }),
@@ -120,7 +125,8 @@
     [[RPParticleContact alloc] initWithParticle:particleA
                                        particle:particleB
                                     restitution:1
-                                         normal:&contactNormal];
+                                         normal:&contactNormal
+                                    penetration:0];
     contact.penetration = 1;
     [contact resolveInterpenetrationForDuration:1];
     STAssertEqualsWithAccuracy(particleA.positionRef->x, (RPReal)(1.5),
