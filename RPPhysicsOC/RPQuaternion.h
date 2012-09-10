@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "RPTypes.h"
+#import "RPVector3.h"
+
+extern const RPQuaternion RPQuaternionIdentity;
 
 static __inline__ RPQuaternion *
-RPQuarternionFromAngleAndAxis(RPQuaternion *me,
-                              RPReal radians, RPVector3 *axis)
+RPQuaternionFromAngleAndAxis(RPQuaternion *me,
+                             RPReal radians, RPVector3 *axis)
 {
     RPReal halfAngle = radians * (RPReal)0.5;
     RPReal scale = RPReal_SIN(halfAngle);
@@ -24,15 +27,18 @@ RPQuarternionFromAngleAndAxis(RPQuaternion *me,
 }
 
 static __inline__ RPQuaternion *
-RPQuarternionFromAngleAndXYZ(RPQuaternion *me,
-                              RPReal radians, RPReal x, RPReal y, RPReal z)
+RPQuaternionFromAngleAndXYZ(RPQuaternion *me,
+                            RPReal radians, RPReal x, RPReal y, RPReal z)
 {
+    RPVector3 v = { x, y, z };
+    RPVector3Normalize(&v, &v);
+
     RPReal halfAngle = radians * (RPReal)0.5;
     RPReal scale = RPReal_SIN(halfAngle);
     *me = (RPQuaternion){
-        scale * x,
-        scale * y,
-        scale * z,
+        scale * v.x,
+        scale * v.y,
+        scale * v.z,
         RPReal_COS(halfAngle) };
     return me;
 }

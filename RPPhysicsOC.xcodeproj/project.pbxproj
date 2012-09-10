@@ -35,6 +35,7 @@
 		1375F1F515FD408700EDE086 /* RPMatrix3.m in Sources */ = {isa = PBXBuildFile; fileRef = 1375F1F315FD408600EDE086 /* RPMatrix3.m */; };
 		1375F1F815FD4BF400EDE086 /* RPQuaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = 1375F1F615FD4BF400EDE086 /* RPQuaternion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1375F1F915FD4BF400EDE086 /* RPQuaternion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1375F1F715FD4BF400EDE086 /* RPQuaternion.m */; };
+		1375F1FC15FE3E7700EDE086 /* RPMatrix3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1375F1FB15FE3E7700EDE086 /* RPMatrix3Tests.m */; };
 		1377812715F4FC72003623C6 /* RPFireworkRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812615F4FC72003623C6 /* RPFireworkRule.m */; };
 		1377812B15F51672003623C6 /* RPRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812A15F51672003623C6 /* RPRandom.m */; };
 		1377812E15F5464A003623C6 /* RPRandomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812D15F5464A003623C6 /* RPRandomTests.m */; };
@@ -127,6 +128,8 @@
 		1375F1F315FD408600EDE086 /* RPMatrix3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPMatrix3.m; sourceTree = "<group>"; };
 		1375F1F615FD4BF400EDE086 /* RPQuaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPQuaternion.h; sourceTree = "<group>"; };
 		1375F1F715FD4BF400EDE086 /* RPQuaternion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPQuaternion.m; sourceTree = "<group>"; };
+		1375F1FA15FE3E7700EDE086 /* RPMatrix3Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPMatrix3Tests.h; sourceTree = "<group>"; };
+		1375F1FB15FE3E7700EDE086 /* RPMatrix3Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPMatrix3Tests.m; sourceTree = "<group>"; };
 		1377812515F4FC72003623C6 /* RPFireworkRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPFireworkRule.h; sourceTree = "<group>"; };
 		1377812615F4FC72003623C6 /* RPFireworkRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPFireworkRule.m; sourceTree = "<group>"; };
 		1377812915F51672003623C6 /* RPRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPRandom.h; sourceTree = "<group>"; };
@@ -268,6 +271,8 @@
 		1352494E15F29A6300B98CF6 /* RPPhysicsOCTests */ = {
 			isa = PBXGroup;
 			children = (
+				1375F1FA15FE3E7700EDE086 /* RPMatrix3Tests.h */,
+				1375F1FB15FE3E7700EDE086 /* RPMatrix3Tests.m */,
 				1326F74715F7A77900A346E9 /* RPParticleContactTests.h */,
 				1326F74815F7A77900A346E9 /* RPParticleContactTests.m */,
 				1352497715F3EEDE00B98CF6 /* RPParticleTests.h */,
@@ -457,6 +462,7 @@
 				1352497915F3EEDE00B98CF6 /* RPParticleTests.m in Sources */,
 				1377812E15F5464A003623C6 /* RPRandomTests.m in Sources */,
 				1326F74915F7A77900A346E9 /* RPParticleContactTests.m in Sources */,
+				1375F1FC15FE3E7700EDE086 /* RPMatrix3Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

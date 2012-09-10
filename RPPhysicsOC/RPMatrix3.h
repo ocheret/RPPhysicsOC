@@ -48,24 +48,24 @@ RPMatrix3FromArrayAndTranspose(RPMatrix3 *me, RPReal values[9])
 
 static __inline__ RPMatrix3 *
 RPMatrix3FromRows(RPMatrix3 *me,
-                  RPVector3 row0, RPVector3 row1, RPVector3 row2)
+                  RPVector3 *row0, RPVector3 *row1, RPVector3 *row2)
 {
     *me = (RPMatrix3){
-        row0.x, row1.x, row2.x,
-        row0.y, row1.y, row2.y,
-        row0.z, row1.z, row2.z };
+        row0->x, row1->x, row2->x,
+        row0->y, row1->y, row2->y,
+        row0->z, row1->z, row2->z };
     return me;
 }
 
 
 static __inline__ RPMatrix3 *
 RPMatrix3FromColumns(RPMatrix3 *me,
-                     RPVector3 column0, RPVector3 column1, RPVector3 column2)
+                     RPVector3 *column0, RPVector3 *column1, RPVector3 *column2)
 {
     *me = (RPMatrix3){
-        column0.x, column0.y, column0.z,
-        column1.x, column1.y, column1.z,
-        column2.x, column2.y, column2.z };
+        column0->x, column0->y, column0->z,
+        column1->x, column1->y, column1->z,
+        column2->x, column2->y, column2->z };
     return me;
 }
 

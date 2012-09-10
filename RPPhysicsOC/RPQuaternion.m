@@ -8,3 +8,4 @@
 
 #import "RPQuaternion.h"
 
+const RPQuaternion RPQuaternionIdentity = { 0, 0, 0, 1 };

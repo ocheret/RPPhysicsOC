@@ -45,8 +45,7 @@ typedef union _RPVector3 RPVector3;
 
 union _RPMatrix3
 {
-    struct
-    {
+    struct {
         RPReal m00, m01, m02;
         RPReal m10, m11, m12;
         RPReal m20, m21, m22;
@@ -54,6 +53,18 @@ union _RPMatrix3
     RPReal m[9];
 };
 typedef union _RPMatrix3 RPMatrix3;
+
+union _RPMatrix3x4
+{
+    struct {
+        RPReal m00, m01, m02; // m03 assumed 0
+        RPReal m10, m11, m12; // m13 assumed 0
+        RPReal m20, m21, m22; // m23 assumed 0
+        RPReal m30, m31, m32; // m33 assumed 1
+    };
+    RPReal v[12];
+};
+typedef union _RPMatrix3x4 RPMatrix3x4;
 
 union _RPQuaternion
 {
