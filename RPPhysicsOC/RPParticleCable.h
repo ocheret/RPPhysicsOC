@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RPParticleLink.h>
+#import "RPParticleLink.h"
 
 @interface RPParticleCable : RPParticleLink
 

@@ -31,6 +31,10 @@
 		1375F1ED15FD2AA400EDE086 /* RPParticleRod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1375F1EB15FD2AA400EDE086 /* RPParticleRod.m */; };
 		1375F1F015FD302200EDE086 /* RPParticleWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = 1375F1EE15FD302200EDE086 /* RPParticleWorld.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1375F1F115FD302200EDE086 /* RPParticleWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = 1375F1EF15FD302200EDE086 /* RPParticleWorld.m */; };
+		1375F1F415FD408700EDE086 /* RPMatrix3.h in Headers */ = {isa = PBXBuildFile; fileRef = 1375F1F215FD408600EDE086 /* RPMatrix3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1375F1F515FD408700EDE086 /* RPMatrix3.m in Sources */ = {isa = PBXBuildFile; fileRef = 1375F1F315FD408600EDE086 /* RPMatrix3.m */; };
+		1375F1F815FD4BF400EDE086 /* RPQuaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = 1375F1F615FD4BF400EDE086 /* RPQuaternion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1375F1F915FD4BF400EDE086 /* RPQuaternion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1375F1F715FD4BF400EDE086 /* RPQuaternion.m */; };
 		1377812715F4FC72003623C6 /* RPFireworkRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812615F4FC72003623C6 /* RPFireworkRule.m */; };
 		1377812B15F51672003623C6 /* RPRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812A15F51672003623C6 /* RPRandom.m */; };
 		1377812E15F5464A003623C6 /* RPRandomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812D15F5464A003623C6 /* RPRandomTests.m */; };
@@ -119,6 +123,10 @@
 		1375F1EB15FD2AA400EDE086 /* RPParticleRod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleRod.m; sourceTree = "<group>"; };
 		1375F1EE15FD302200EDE086 /* RPParticleWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleWorld.h; sourceTree = "<group>"; };
 		1375F1EF15FD302200EDE086 /* RPParticleWorld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleWorld.m; sourceTree = "<group>"; };
+		1375F1F215FD408600EDE086 /* RPMatrix3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPMatrix3.h; sourceTree = "<group>"; };
+		1375F1F315FD408600EDE086 /* RPMatrix3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPMatrix3.m; sourceTree = "<group>"; };
+		1375F1F615FD4BF400EDE086 /* RPQuaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPQuaternion.h; sourceTree = "<group>"; };
+		1375F1F715FD4BF400EDE086 /* RPQuaternion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPQuaternion.m; sourceTree = "<group>"; };
 		1377812515F4FC72003623C6 /* RPFireworkRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPFireworkRule.h; sourceTree = "<group>"; };
 		1377812615F4FC72003623C6 /* RPFireworkRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPFireworkRule.m; sourceTree = "<group>"; };
 		1377812915F51672003623C6 /* RPRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPRandom.h; sourceTree = "<group>"; };
@@ -204,6 +212,8 @@
 				1352496B15F331AD00B98CF6 /* RPFirework.m */,
 				1377812515F4FC72003623C6 /* RPFireworkRule.h */,
 				1377812615F4FC72003623C6 /* RPFireworkRule.m */,
+				1375F1F215FD408600EDE086 /* RPMatrix3.h */,
+				1375F1F315FD408600EDE086 /* RPMatrix3.m */,
 				1352496415F2CF0D00B98CF6 /* RPParticle.h */,
 				1352496515F2CF0D00B98CF6 /* RPParticle.m */,
 				1377815415F5AA5B003623C6 /* RPParticleAnchoredSpring.h */,
@@ -235,6 +245,8 @@
 				1375F1EE15FD302200EDE086 /* RPParticleWorld.h */,
 				1375F1EF15FD302200EDE086 /* RPParticleWorld.m */,
 				1352493C15F29A6200B98CF6 /* RPPhysicsOC.h */,
+				1375F1F615FD4BF400EDE086 /* RPQuaternion.h */,
+				1375F1F715FD4BF400EDE086 /* RPQuaternion.m */,
 				1377812915F51672003623C6 /* RPRandom.h */,
 				1377812A15F51672003623C6 /* RPRandom.m */,
 				1352496315F2CD1E00B98CF6 /* RPTypes.h */,
@@ -309,6 +321,8 @@
 				1375F1E415FA58E600EDE086 /* RPParticleCable.h in Headers */,
 				1375F1EC15FD2AA400EDE086 /* RPParticleRod.h in Headers */,
 				1375F1F015FD302200EDE086 /* RPParticleWorld.h in Headers */,
+				1375F1F415FD408700EDE086 /* RPMatrix3.h in Headers */,
+				1375F1F815FD4BF400EDE086 /* RPQuaternion.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +443,8 @@
 				1375F1E515FA58E600EDE086 /* RPParticleCable.m in Sources */,
 				1375F1ED15FD2AA400EDE086 /* RPParticleRod.m in Sources */,
 				1375F1F115FD302200EDE086 /* RPParticleWorld.m in Sources */,
+				1375F1F515FD408700EDE086 /* RPMatrix3.m in Sources */,
+				1375F1F915FD4BF400EDE086 /* RPQuaternion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

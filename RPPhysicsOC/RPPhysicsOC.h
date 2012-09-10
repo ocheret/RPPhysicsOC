@@ -7,6 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RPTypes.h>
-#import <RPVector3.h>
-#import <RPParticle.h>
+#import "RPTypes.h"
+#import "RPVector3.h"
+#import "RPParticle.h"

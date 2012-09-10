@@ -24,7 +24,7 @@ typedef double               RPReal64;
 typedef float               RPReal;
 #define RPReal_SQRT(x)      sqrtf(x)
 #define RPReal_ABS(x)       fabsf(x)
-#define RPSReal_SIN(x)      sinf(x)
+#define RPReal_SIN(x)       sinf(x)
 #define RPReal_COS(x)       cosf(x)
 #define RPReal_EXP(x)       expf(x)
 #define RPReal_POW(x, y)    powf(x, y)
@@ -33,3 +33,32 @@ typedef float               RPReal;
 #define RP_PI 3.14159f
 #define RPReal_MAX FLT_MAX
 #define RPReal_MIN FLT_MIN
+
+union _RPVector3
+{
+    struct { RPReal x, y, z; };
+    struct { RPReal r, g, b; };
+    struct { RPReal s, t, p; };
+    RPReal v[3];
+};
+typedef union _RPVector3 RPVector3;
+
+union _RPMatrix3
+{
+    struct
+    {
+        RPReal m00, m01, m02;
+        RPReal m10, m11, m12;
+        RPReal m20, m21, m22;
+    };
+    RPReal m[9];
+};
+typedef union _RPMatrix3 RPMatrix3;
+
+union _RPQuaternion
+{
+    struct { RPVector3 v; RPReal s; };
+    struct { RPReal x, y, z, w; };
+    RPReal q[4];
+};
+typedef union _RPQuaternion RPQuaternion;

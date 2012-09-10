@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RPParticleContact.h>
+#import "RPParticleContact.h"
 
 @protocol RPParticleContactGenerator <NSObject>
 

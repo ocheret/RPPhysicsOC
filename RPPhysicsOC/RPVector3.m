@@ -8,4 +8,4 @@
 
 #import "RPVector3.h"
 
-RPVector3 RP_GRAVITY = { 0.0,  -9.81, 0.0 };
+const RPVector3 RP_GRAVITY = { 0.0,  -9.81, 0.0 };

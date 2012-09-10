@@ -34,7 +34,7 @@
 {
     [self.contacts removeAllObjects];
 
-    for (id <RPParticleContactGenerator> generator in self.contactGenerators) {
+    for (id<RPParticleContactGenerator> generator in self.contactGenerators) {
         [generator addContact:self.contacts];
     }
 }

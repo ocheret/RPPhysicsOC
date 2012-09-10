@@ -9,16 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "RPTypes.h"
 
-union _RPVector3
-{
-    struct { RPReal x, y, z; };
-    struct { RPReal r, g, b; };
-    struct { RPReal s, t, p; };
-    RPReal v[3];
-};
-typedef union _RPVector3 RPVector3;
-
-extern RPVector3 RP_GRAVITY;
+extern const RPVector3 RP_GRAVITY;
 
 static __inline__ RPVector3 *RPVector3SetWithArray(RPVector3 *me,
                                                    RPReal values[3])

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RPParticleForceGenerator.h>
+#import "RPParticleForceGenerator.h"
 
 @interface RPParticleBungee : NSObject <RPParticleForceGenerator>
 
