@@ -34,8 +34,7 @@ typedef float               RPReal;
 #define RPReal_MAX FLT_MAX
 #define RPReal_MIN FLT_MIN
 
-union _RPVector3
-{
+union _RPVector3 {
     struct { RPReal x, y, z; };
     struct { RPReal r, g, b; };
     struct { RPReal s, t, p; };
@@ -43,8 +42,7 @@ union _RPVector3
 };
 typedef union _RPVector3 RPVector3;
 
-union _RPMatrix3
-{
+union _RPMatrix3 {
     struct {
         RPReal m00, m01, m02;
         RPReal m10, m11, m12;
@@ -54,8 +52,7 @@ union _RPMatrix3
 };
 typedef union _RPMatrix3 RPMatrix3;
 
-union _RPMatrix3x4
-{
+union _RPMatrix3x4 {
     struct {
         RPReal m00, m01, m02; // m03 assumed 0
         RPReal m10, m11, m12; // m13 assumed 0
@@ -66,8 +63,7 @@ union _RPMatrix3x4
 };
 typedef union _RPMatrix3x4 RPMatrix3x4;
 
-union _RPQuaternion
-{
+union _RPQuaternion {
     struct { RPVector3 v; RPReal s; };
     struct { RPReal x, y, z, w; };
     RPReal q[4];
