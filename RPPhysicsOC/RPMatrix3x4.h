@@ -138,12 +138,29 @@ RPMatrix3x4Multiply(RPMatrix3x4 *me,
 }
 
 static __inline__ RPVector3 *
-RPMatrix3x4MultiplyVector(RPVector3 *vout, RPMatrix3x4 *m, RPVector3 *vin)
+RPMatrix3x4MultiplyVector3(RPVector3 *vout, RPMatrix3x4 *m, RPVector3 *vin)
 {
     *vout = (RPVector3) {
         m->m00 * vin->x + m->m10 * vin->y + m->m20 * vin->z + m->m30,
         m->m01 * vin->x + m->m11 * vin->y + m->m21 * vin->z + m->m31,
         m->m02 * vin->x + m->m12 * vin->y + m->m22 * vin->z + m->m32
+    };
+    return vout;
+}
+
+static __inline__ RPVector3 *
+RPMatrix3x4InverseMultiplyVector3(RPVector3 *vout,
+                                  RPMatrix3x4 *m,
+                                  RPVector3 *vin)
+{
+    RPVector3 tmp;
+    tmp.x = vin->x - m->m30;
+    tmp.y = vin->y - m->m31;
+    tmp.z = vin->z - m->m32;
+    *vout = (RPVector3){
+        m->m00 * tmp.x + m->m01 * tmp.y + m->m02 * tmp.z,
+        m->m10 * tmp.x + m->m11 * tmp.y + m->m12 * tmp.z,
+        m->m20 * tmp.x + m->m21 * tmp.y + m->m22 * tmp.z
     };
     return vout;
 }

@@ -67,7 +67,7 @@
 
 }
 
-- (void)testMulitplyVectorA
+- (void)testMulitplyVector3A
 {
     RPMatrix3 a;
     RPVector3 v = { 1, 2, 3 };
@@ -75,14 +75,14 @@
     RPMatrix3x4 b;
     RPVector3 t = { 100, 200, 300 };
     RPMatrix3x4FromMatrix3AndVector3(&b, &a, &t);
-    RPMatrix3x4MultiplyVector(&v, &b, &v);
-    NSString *msg = @"RPMatrix3x4MultiplyVector failed";
+    RPMatrix3x4MultiplyVector3(&v, &b, &v);
+    NSString *msg = @"RPMatrix3x4MultiplyVector3 failed";
     STAssertEqualsWithAccuracy(v.x, (RPReal)98.0, 0.00001, msg);
     STAssertEqualsWithAccuracy(v.y, (RPReal)201.0, 0.00001, msg);
     STAssertEqualsWithAccuracy(v.z, (RPReal)303.0, 0.00001, msg);
 }
 
-- (void)testMulitplyVectorB
+- (void)testMulitplyVector3B
 {
     RPMatrix3 a;
     RPVector3 v = { 1, 2, 3 };
@@ -90,14 +90,14 @@
     RPMatrix3x4 b;
     RPVector3 t = { 100, 200, 300 };
     RPMatrix3x4FromMatrix3AndVector3(&b, &a, &t);
-    RPMatrix3x4MultiplyVector(&v, &b, &v);
-    NSString *msg = @"RPMatrix3x4MultiplyVector failed";
+    RPMatrix3x4MultiplyVector3(&v, &b, &v);
+    NSString *msg = @"RPMatrix3x4MultiplyVector3 failed";
     STAssertEqualsWithAccuracy(v.x, (RPReal)103.0, 0.00001, msg);
     STAssertEqualsWithAccuracy(v.y, (RPReal)202.0, 0.00001, msg);
     STAssertEqualsWithAccuracy(v.z, (RPReal)299.0, 0.00001, msg);
 }
 
-- (void)testMulitplyVectorC
+- (void)testMulitplyVector3C
 {
     RPMatrix3 a;
     RPVector3 v = { 1, 2, 3 };
@@ -105,8 +105,8 @@
     RPMatrix3x4 b;
     RPVector3 t = { 100, 200, 300 };
     RPMatrix3x4FromMatrix3AndVector3(&b, &a, &t);
-    RPMatrix3x4MultiplyVector(&v, &b, &v);
-    NSString *msg = @"RPMatrix3x4MultiplyVector failed";
+    RPMatrix3x4MultiplyVector3(&v, &b, &v);
+    NSString *msg = @"RPMatrix3x4MultiplyVector3 failed";
     STAssertEqualsWithAccuracy(v.x, (RPReal)101.0, 0.00001, msg);
     STAssertEqualsWithAccuracy(v.y, (RPReal)197.0, 0.00001, msg);
     STAssertEqualsWithAccuracy(v.z, (RPReal)302.0, 0.00001, msg);
@@ -187,6 +187,22 @@
     STAssertEqualsWithAccuracy(i.m[9], (RPReal)0, 0.00001, msg);
     STAssertEqualsWithAccuracy(i.m[10], (RPReal)0, 0.00001, msg);
     STAssertEqualsWithAccuracy(i.m[11], (RPReal)0, 0.00001, msg);
+}
+
+- (void)testInverseMultiplyVector3
+{
+    RPMatrix3 a;
+    RPVector3 v = { 1, 2, 3 };
+    RPMatrix3MakeXRotation(&a, M_PI_2);
+    RPMatrix3x4 b;
+    RPVector3 t = { 100, 200, 300 };
+    RPMatrix3x4FromMatrix3AndVector3(&b, &a, &t);
+    RPMatrix3x4MultiplyVector3(&v, &b, &v);
+    RPMatrix3x4InverseMultiplyVector3(&v, &b, &v);
+    NSString *msg = @"RPMatrix3x4InverseMultiplyVector3 failed";
+    STAssertEqualsWithAccuracy(v.x, (RPReal)1, 0.00001, msg);
+    STAssertEqualsWithAccuracy(v.y, (RPReal)2, 0.00001, msg);
+    STAssertEqualsWithAccuracy(v.z, (RPReal)3, 0.00001, msg);
 }
 
 @end
