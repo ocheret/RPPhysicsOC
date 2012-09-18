@@ -165,6 +165,30 @@ RPMatrix3x4InverseMultiplyVector3(RPVector3 *vout,
     return vout;
 }
 
+static __inline__ RPVector3 *
+RPMatrix3x4XFormDirection(RPVector3 *vout, RPMatrix3x4 *m, RPVector3 *vin)
+{
+    *vout = (RPVector3) {
+        m->m00 * vin->x + m->m10 * vin->y + m->m20 * vin->z,
+        m->m01 * vin->x + m->m11 * vin->y + m->m21 * vin->z,
+        m->m02 * vin->x + m->m12 * vin->y + m->m22 * vin->z
+    };
+    return vout;
+}
+
+static __inline__ RPVector3 *
+RPMatrix3x4InverseXFormDirection(RPVector3 *vout,
+                                 RPMatrix3x4 *m,
+                                 RPVector3 *vin)
+{
+    *vout = (RPVector3){
+        m->m00 * vin->x + m->m01 * vin->y + m->m02 * vin->z,
+        m->m10 * vin->x + m->m11 * vin->y + m->m12 * vin->z,
+        m->m20 * vin->x + m->m21 * vin->y + m->m22 * vin->z
+    };
+    return vout;
+}
+
 static __inline__ RPReal
 RPMatrix3x4Determinant(RPMatrix3x4 *me)
 {

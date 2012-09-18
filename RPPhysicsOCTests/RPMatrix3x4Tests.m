@@ -205,4 +205,40 @@
     STAssertEqualsWithAccuracy(v.z, (RPReal)3, 0.00001, msg);
 }
 
+- (void)testXFormDirection
+{
+    RPMatrix3 r, t;
+    RPMatrix3MakeRotation(&r, M_PI_2, 1.0, 2.0, 3.0);
+    RPMatrix3Transpose(&t, &r);
+    RPVector3 v = { 100, 200, 300 };
+    RPMatrix3x4 m;
+    RPMatrix3x4FromMatrix3AndVector3(&m, &r, &v);
+
+    RPVector3 a, b;
+    RPMatrix3MultiplyVector(&a, &r, &v);
+    RPMatrix3x4XFormDirection(&b, &m, &v);
+    NSString *msg = @"RPMatrix3x4XFormDirection failed";
+    STAssertEquals(a.x, b.x, msg);
+    STAssertEquals(a.y, b.y, msg);
+    STAssertEquals(a.z, b.z, msg);
+}
+
+- (void)testInverseXFormDirection
+{
+    RPMatrix3 r, t;
+    RPMatrix3MakeRotation(&r, M_PI_2, 1.0, 2.0, 3.0);
+    RPMatrix3Transpose(&t, &r);
+    RPVector3 v = { 100, 200, 300 };
+    RPMatrix3x4 m;
+    RPMatrix3x4FromMatrix3AndVector3(&m, &r, &v);
+
+    RPVector3 a;
+    RPMatrix3x4XFormDirection(&a, &m, &v);
+    RPMatrix3x4InverseXFormDirection(&a, &m, &a);
+    NSString *msg = @"RPMatrix3x4InverseXFormDirection failed";
+    STAssertEqualsWithAccuracy(a.x, v.x, 0.0001, msg);
+    STAssertEqualsWithAccuracy(a.y, v.y, 0.0001, msg);
+    STAssertEqualsWithAccuracy(a.z, v.z, 0.0001, msg);
+}
+
 @end
