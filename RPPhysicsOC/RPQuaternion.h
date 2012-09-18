@@ -135,3 +135,22 @@ RPQuaternionRotateVector3(RPVector3 *me,
 
     return me;
 }
+
+static __inline__ RPQuaternion *
+RPQuaternionFromVector3(RPQuaternion *me, RPVector3 *v)
+{
+    *me = (RPQuaternion) { v->x, v->y, v->z, 0 };
+    return me;
+}
+
+static __inline__ RPQuaternion *
+RPQuaternionAddScaledVector3(RPQuaternion *me, RPVector3 *v, RPReal scale)
+{
+    RPQuaternion q = { v->x * scale, v->y * scale, v->z * scale, 0};
+    RPQuaternionMultiply(&q, &q, me);
+    me->x += q.x * (RPReal)0.5;
+    me->y += q.y * (RPReal)0.5;
+    me->z += q.z * (RPReal)0.5;
+    me->w += q.w * (RPReal)0.5;
+    return me;
+}
