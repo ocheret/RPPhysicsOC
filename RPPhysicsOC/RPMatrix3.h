@@ -11,6 +11,8 @@
 #import "RPVector3.h"
 #import "RPQuaternion.h"
 
+NSString *RPMatrix3Describe(RPMatrix3x4 *m);
+
 static __inline__ RPMatrix3 *
 RPMatrix3SetTranspose(RPMatrix3 *me,
                       RPReal m00, RPReal m01, RPReal m02,
@@ -189,41 +191,41 @@ static __inline__ RPMatrix3 *
 RPMatrix3Multiply(RPMatrix3 *me, RPMatrix3 *matrixLeft, RPMatrix3 *matrixRight)
 {
     *me = (RPMatrix3) {
-        matrixLeft->m[0] * matrixRight->m[0] +
-        matrixLeft->m[3] * matrixRight->m[1] +
-        matrixLeft->m[6] * matrixRight->m[2],
+        matrixLeft->m00 * matrixRight->m00 +
+        matrixLeft->m10 * matrixRight->m01 +
+        matrixLeft->m20 * matrixRight->m02,
 
-        matrixLeft->m[1] * matrixRight->m[0] +
-        matrixLeft->m[4] * matrixRight->m[1] +
-        matrixLeft->m[7] * matrixRight->m[2],
+        matrixLeft->m01 * matrixRight->m00 +
+        matrixLeft->m11 * matrixRight->m01 +
+        matrixLeft->m21 * matrixRight->m02,
 
-        matrixLeft->m[2] * matrixRight->m[0] +
-        matrixLeft->m[5] * matrixRight->m[1] +
-        matrixLeft->m[8] * matrixRight->m[2],
+        matrixLeft->m02 * matrixRight->m00 +
+        matrixLeft->m12 * matrixRight->m01 +
+        matrixLeft->m22 * matrixRight->m02,
 
-        matrixLeft->m[0] * matrixRight->m[3] +
-        matrixLeft->m[3] * matrixRight->m[4] +
-        matrixLeft->m[6] * matrixRight->m[5],
+        matrixLeft->m00 * matrixRight->m10 +
+        matrixLeft->m10 * matrixRight->m11 +
+        matrixLeft->m20 * matrixRight->m12,
 
-        matrixLeft->m[1] * matrixRight->m[3] +
-        matrixLeft->m[4] * matrixRight->m[4] +
-        matrixLeft->m[7] * matrixRight->m[5],
+        matrixLeft->m01 * matrixRight->m10 +
+        matrixLeft->m11 * matrixRight->m11 +
+        matrixLeft->m21 * matrixRight->m12,
 
-        matrixLeft->m[2] * matrixRight->m[3] +
-        matrixLeft->m[5] * matrixRight->m[4] +
-        matrixLeft->m[8] * matrixRight->m[5],
+        matrixLeft->m02 * matrixRight->m10 +
+        matrixLeft->m12 * matrixRight->m11 +
+        matrixLeft->m22 * matrixRight->m12,
 
-        matrixLeft->m[0] * matrixRight->m[6] +
-        matrixLeft->m[3] * matrixRight->m[7] +
-        matrixLeft->m[6] * matrixRight->m[8],
+        matrixLeft->m00 * matrixRight->m20 +
+        matrixLeft->m10 * matrixRight->m21 +
+        matrixLeft->m20 * matrixRight->m22,
 
-        matrixLeft->m[1] * matrixRight->m[6] +
-        matrixLeft->m[4] * matrixRight->m[7] +
-        matrixLeft->m[7] * matrixRight->m[8],
+        matrixLeft->m01 * matrixRight->m20 +
+        matrixLeft->m11 * matrixRight->m21 +
+        matrixLeft->m21 * matrixRight->m22,
 
-        matrixLeft->m[2] * matrixRight->m[6] +
-        matrixLeft->m[5] * matrixRight->m[7] +
-        matrixLeft->m[8] * matrixRight->m[8] };
+        matrixLeft->m02 * matrixRight->m20 +
+        matrixLeft->m12 * matrixRight->m21 +
+        matrixLeft->m22 * matrixRight->m22 };
     
     return me;
 }
@@ -259,3 +261,17 @@ RPMatrix3Subtract(RPMatrix3 *me, RPMatrix3 *matrixLeft, RPMatrix3 *matrixRight)
 
     return me;
 }
+
+static __inline__ RPVector3 *
+RPMatrix3MultiplyVector(RPVector3 *vout, RPMatrix3 *m, RPVector3 *vin)
+{
+    *vout = (RPVector3) {
+        m->m00 * vin->x + m->m10 * vin->y + m->m20 * vin->z,
+        m->m01 * vin->x + m->m11 * vin->y + m->m21 * vin->z,
+        m->m02 * vin->x + m->m12 * vin->y + m->m22 * vin->z
+    };
+    return vout;
+}
+
+RPMatrix3 *
+RPMatrix3Invert(RPMatrix3 *me, RPMatrix3 *m);

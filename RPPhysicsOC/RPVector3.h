@@ -23,9 +23,9 @@ static __inline__ RPVector3 *RPVector3Clear(RPVector3 *me) {
     return me;
 }
 
-static __inline__ RPVector3 *RPVector3Negate(RPVector3 *me)
+static __inline__ RPVector3 *RPVector3Negate(RPVector3 *me, RPVector3 *vector)
 {
-    me->x = -me->x; me->y = -me->y; me->z = -me->z;
+    me->x = -vector->x; me->y = -vector->y; me->z = -vector->z;
     return me;
 }
 

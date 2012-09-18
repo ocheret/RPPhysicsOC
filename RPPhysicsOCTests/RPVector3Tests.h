@@ -8,6 +8,7 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import <RPPhysicsOC/RPVector3.h>
+#import <GLKit/GLKit.h>
 
 @interface RPVector3Tests : SenTestCase
 

@@ -36,7 +36,7 @@
 - (void)testNegate
 {
     RPVector3 a = { TESTX, TESTY, TESTZ };
-    RPVector3 *b = RPVector3Negate(&a);
+    RPVector3 *b = RPVector3Negate(&a, &a);
     STAssertEquals(&a, b, @"RPVector3Negate didn't return its argument");
     STAssertTrue(a.x == -TESTX && a.y == -TESTY && a.z == -TESTZ,
                  @"RPVector3Negate failed");
@@ -368,5 +368,30 @@
                  @"RPVector3TrimTo wrong length %f", l);
 
 }
+
+//- (void)testStructPerformance
+//{
+//    GLKVector3 xglk = { 123, 456, 789 };
+//    GLKVector3 vglk;
+//
+//#define ITERATIONS 100000
+//    NSDate *start = [NSDate date];
+//    for (int i = 0; i < ITERATIONS; i++) {
+//        vglk = GLKVector3Negate(xglk);
+//    }
+//    NSTimeInterval tiglk = [start timeIntervalSinceNow];
+//
+//    RPVector3 xrp = { 123, 456, 789 };
+//    RPVector3 vrp;
+//
+//    start = [NSDate date];
+//    for (int i = 0; i < ITERATIONS; i++) {
+//        RPVector3Negate(&vrp, &xrp);
+//    }
+//    NSTimeInterval tirp = [start timeIntervalSinceNow];
+//
+//    STAssertTrue(tirp < tiglk,
+//        @"Passing struct by value seems to be faster than by reference!");
+//}
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1326F74915F7A77900A346E9 /* RPParticleContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1326F74815F7A77900A346E9 /* RPParticleContactTests.m */; };
+		133FA3AD16078E17000855C1 /* RPMatrix3x4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 133FA3AC16078E17000855C1 /* RPMatrix3x4Tests.m */; };
 		1352493815F29A6200B98CF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352493715F29A6200B98CF6 /* Foundation.framework */; };
 		1352494715F29A6300B98CF6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494615F29A6300B98CF6 /* SenTestingKit.framework */; };
 		1352494915F29A6300B98CF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494815F29A6300B98CF6 /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 		1375F1F815FD4BF400EDE086 /* RPQuaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = 1375F1F615FD4BF400EDE086 /* RPQuaternion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1375F1F915FD4BF400EDE086 /* RPQuaternion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1375F1F715FD4BF400EDE086 /* RPQuaternion.m */; };
 		1375F1FC15FE3E7700EDE086 /* RPMatrix3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1375F1FB15FE3E7700EDE086 /* RPMatrix3Tests.m */; };
+		1375F1FF1600EF1300EDE086 /* RPMatrix3x4.h in Headers */ = {isa = PBXBuildFile; fileRef = 1375F1FD1600EF1000EDE086 /* RPMatrix3x4.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1375F2001600EF1300EDE086 /* RPMatrix3x4.m in Sources */ = {isa = PBXBuildFile; fileRef = 1375F1FE1600EF1100EDE086 /* RPMatrix3x4.m */; };
 		1377812715F4FC72003623C6 /* RPFireworkRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812615F4FC72003623C6 /* RPFireworkRule.m */; };
 		1377812B15F51672003623C6 /* RPRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812A15F51672003623C6 /* RPRandom.m */; };
 		1377812E15F5464A003623C6 /* RPRandomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377812D15F5464A003623C6 /* RPRandomTests.m */; };
@@ -90,6 +93,8 @@
 /* Begin PBXFileReference section */
 		1326F74715F7A77900A346E9 /* RPParticleContactTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPParticleContactTests.h; sourceTree = "<group>"; };
 		1326F74815F7A77900A346E9 /* RPParticleContactTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleContactTests.m; sourceTree = "<group>"; };
+		133FA3AB16078E17000855C1 /* RPMatrix3x4Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPMatrix3x4Tests.h; sourceTree = "<group>"; };
+		133FA3AC16078E17000855C1 /* RPMatrix3x4Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPMatrix3x4Tests.m; sourceTree = "<group>"; };
 		1352493415F29A6200B98CF6 /* libRPPhysicsOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRPPhysicsOC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1352493715F29A6200B98CF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1352493B15F29A6200B98CF6 /* RPPhysicsOC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RPPhysicsOC-Prefix.pch"; sourceTree = "<group>"; };
@@ -130,6 +135,8 @@
 		1375F1F715FD4BF400EDE086 /* RPQuaternion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPQuaternion.m; sourceTree = "<group>"; };
 		1375F1FA15FE3E7700EDE086 /* RPMatrix3Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPMatrix3Tests.h; sourceTree = "<group>"; };
 		1375F1FB15FE3E7700EDE086 /* RPMatrix3Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPMatrix3Tests.m; sourceTree = "<group>"; };
+		1375F1FD1600EF1000EDE086 /* RPMatrix3x4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPMatrix3x4.h; sourceTree = "<group>"; };
+		1375F1FE1600EF1100EDE086 /* RPMatrix3x4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPMatrix3x4.m; sourceTree = "<group>"; };
 		1377812515F4FC72003623C6 /* RPFireworkRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPFireworkRule.h; sourceTree = "<group>"; };
 		1377812615F4FC72003623C6 /* RPFireworkRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPFireworkRule.m; sourceTree = "<group>"; };
 		1377812915F51672003623C6 /* RPRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPRandom.h; sourceTree = "<group>"; };
@@ -217,6 +224,8 @@
 				1377812615F4FC72003623C6 /* RPFireworkRule.m */,
 				1375F1F215FD408600EDE086 /* RPMatrix3.h */,
 				1375F1F315FD408600EDE086 /* RPMatrix3.m */,
+				1375F1FD1600EF1000EDE086 /* RPMatrix3x4.h */,
+				1375F1FE1600EF1100EDE086 /* RPMatrix3x4.m */,
 				1352496415F2CF0D00B98CF6 /* RPParticle.h */,
 				1352496515F2CF0D00B98CF6 /* RPParticle.m */,
 				1377815415F5AA5B003623C6 /* RPParticleAnchoredSpring.h */,
@@ -273,6 +282,8 @@
 			children = (
 				1375F1FA15FE3E7700EDE086 /* RPMatrix3Tests.h */,
 				1375F1FB15FE3E7700EDE086 /* RPMatrix3Tests.m */,
+				133FA3AB16078E17000855C1 /* RPMatrix3x4Tests.h */,
+				133FA3AC16078E17000855C1 /* RPMatrix3x4Tests.m */,
 				1326F74715F7A77900A346E9 /* RPParticleContactTests.h */,
 				1326F74815F7A77900A346E9 /* RPParticleContactTests.m */,
 				1352497715F3EEDE00B98CF6 /* RPParticleTests.h */,
@@ -328,6 +339,7 @@
 				1375F1F015FD302200EDE086 /* RPParticleWorld.h in Headers */,
 				1375F1F415FD408700EDE086 /* RPMatrix3.h in Headers */,
 				1375F1F815FD4BF400EDE086 /* RPQuaternion.h in Headers */,
+				1375F1FF1600EF1300EDE086 /* RPMatrix3x4.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +462,7 @@
 				1375F1F115FD302200EDE086 /* RPParticleWorld.m in Sources */,
 				1375F1F515FD408700EDE086 /* RPMatrix3.m in Sources */,
 				1375F1F915FD4BF400EDE086 /* RPQuaternion.m in Sources */,
+				1375F2001600EF1300EDE086 /* RPMatrix3x4.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +476,7 @@
 				1377812E15F5464A003623C6 /* RPRandomTests.m in Sources */,
 				1326F74915F7A77900A346E9 /* RPParticleContactTests.m in Sources */,
 				1375F1FC15FE3E7700EDE086 /* RPMatrix3Tests.m in Sources */,
+				133FA3AD16078E17000855C1 /* RPMatrix3x4Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

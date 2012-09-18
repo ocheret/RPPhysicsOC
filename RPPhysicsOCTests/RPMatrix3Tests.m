@@ -401,4 +401,65 @@
     STAssertEquals(c.m[8], (RPReal)2961, msg);
 }
 
+- (void)testMulitplyVectorA
+{
+    RPMatrix3 a;
+    RPVector3 v = { 1, 2, 3 };
+    RPMatrix3MakeZRotation(&a, M_PI_2);
+    RPMatrix3MultiplyVector(&v, &a, &v);
+    NSString *msg = @"RPMatrix3MultiplyVector failed";
+    STAssertEqualsWithAccuracy(v.x, (RPReal)-2.0, 0.00001, msg);
+    STAssertEqualsWithAccuracy(v.y, (RPReal)1.0, 0.00001, msg);
+    STAssertEqualsWithAccuracy(v.z, (RPReal)3.0, 0.00001, msg);
+}
+
+- (void)testMulitplyVectorB
+{
+    RPMatrix3 a;
+    RPVector3 v = { 1, 2, 3 };
+    RPMatrix3MakeYRotation(&a, M_PI_2);
+    RPMatrix3MultiplyVector(&v, &a, &v);
+    NSString *msg = @"RPMatrix3MultiplyVector failed";
+    STAssertEqualsWithAccuracy(v.x, (RPReal)3.0, 0.00001, msg);
+    STAssertEqualsWithAccuracy(v.y, (RPReal)2.0, 0.00001, msg);
+    STAssertEqualsWithAccuracy(v.z, (RPReal)-1.0, 0.00001, msg);
+}
+
+- (void)testMulitplyVectorC
+{
+    RPMatrix3 a;
+    RPVector3 v = { 1, 2, 3 };
+    RPMatrix3MakeXRotation(&a, M_PI_2);
+    RPMatrix3MultiplyVector(&v, &a, &v);
+    NSString *msg = @"RPMatrix3MultiplyVector failed";
+    STAssertEqualsWithAccuracy(v.x, (RPReal)1.0, 0.00001, msg);
+    STAssertEqualsWithAccuracy(v.y, (RPReal)-3.0, 0.00001, msg);
+    STAssertEqualsWithAccuracy(v.z, (RPReal)2.0, 0.00001, msg);
+}
+
+- (void)testInvertA
+{
+    RPMatrix3 m = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    RPMatrix3 *inv = RPMatrix3Invert(&m, &m);
+    STAssertTrue(NULL == inv, @"Singular matrix inverted?");
+}
+
+- (void)testInvertB
+{
+    RPMatrix3 r, t, i;
+    RPMatrix3MakeRotation(&r, M_PI_2, 1.0, 2.0, 3.0);
+    RPMatrix3Transpose(&t, &r);
+    RPMatrix3Invert(&i, &r);
+    NSString *msg = @"RPMatrixInvert failed";
+    STAssertEqualsWithAccuracy(t.m[0], i.m[0], 0.00001, msg);
+    STAssertEqualsWithAccuracy(t.m[1], i.m[1], 0.00001, msg);
+    STAssertEqualsWithAccuracy(t.m[2], i.m[2], 0.00001, msg);
+    STAssertEqualsWithAccuracy(t.m[3], i.m[3], 0.00001, msg);
+    STAssertEqualsWithAccuracy(t.m[4], i.m[4], 0.00001, msg);
+    STAssertEqualsWithAccuracy(t.m[5], i.m[5], 0.00001, msg);
+    STAssertEqualsWithAccuracy(t.m[6], i.m[6], 0.00001, msg);
+    STAssertEqualsWithAccuracy(t.m[7], i.m[7], 0.00001, msg);
+    STAssertEqualsWithAccuracy(t.m[8], i.m[8], 0.00001, msg);
+}
+
 @end
