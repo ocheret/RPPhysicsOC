@@ -12,9 +12,10 @@
 
 - (RPParticleCable *)initWithParticle:(RPParticle *)particleA particle:(RPParticle *)particleB maxLength:(RPReal)maxLength restitution:(RPReal)restitution
 {
-    self = [super initWithParticle:particleA particle:particleB];
-    self.maxLength = maxLength;
-    self.restitution = restitution;
+    if (self = [super initWithParticle:particleA particle:particleB]) {
+        _maxLength = maxLength;
+        _restitution = restitution;
+    }
     return self;
 }
 

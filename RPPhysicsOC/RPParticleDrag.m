@@ -13,8 +13,8 @@
 - (RPParticleDrag *)initWithFirstOrderDrag:(RPReal)k1
                            secondOrderDrag:(RPReal)k2
 {
-    self.k1 = k1;
-    self.k2 = k2;
+    _k1 = k1;
+    _k2 = k2;
     return self;
 }
 

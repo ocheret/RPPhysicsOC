@@ -14,8 +14,9 @@
                            particle:(RPParticle *)particleB
                              length:(RPReal)length
 {
-    self = [super initWithParticle:particleA particle:particleB];
-    self.length = length;
+    if (self = [super initWithParticle:particleA particle:particleB]) {
+        _length = length;
+    }
     return self;
 }
 

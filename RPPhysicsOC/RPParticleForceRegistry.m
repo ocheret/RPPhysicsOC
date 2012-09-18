@@ -12,8 +12,9 @@
 
 - (RPParticleForceRegistry *)init
 {
-    self = [super init];
-    _registry = [[NSMutableArray alloc] init];
+    if (self = [super init]) {
+        _registry = [[NSMutableArray alloc] init];
+    }
     return self;
 }
 

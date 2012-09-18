@@ -14,9 +14,11 @@
                         springConstant:(RPReal)springConstant
                          restingLength:(RPReal)restingLength
 {
-    self.other = other;
-    self.springConstant = springConstant;
-    self.restingLength = restingLength;
+    if (self = [super init]) {
+        _other = other;
+        _springConstant = springConstant;
+        _restingLength = restingLength;
+    }
     return self;
 }
 

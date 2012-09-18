@@ -20,9 +20,10 @@
 - (RPParticleLink *)initWithParticle:(RPParticle *)particleA
                             particle:(RPParticle *)particleB
 {
-    self = [super init];
-    self.particleA = particleA;
-    self.particleB = particleB;
+    if (self = [super init]) {
+        _particleA = particleA;
+        _particleB = particleB;
+    }
     return self;
 }
 

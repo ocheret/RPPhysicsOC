@@ -15,11 +15,12 @@
                            surfaceHeight:(RPReal)surfaceHeight
                                  density:(RPReal)density
 {
-    self = [super init];
-    self.maxDepth = maxDepth;
-    self.volume = volume;
-    self.surfaceHeight = surfaceHeight;
-    self.density = density;
+    if (self = [super init]) {
+        _maxDepth = maxDepth;
+        _volume = volume;
+        _surfaceHeight = surfaceHeight;
+        _density = density;
+    }
     return self;
 }
 

@@ -12,8 +12,9 @@
 
 - (RPParticleContactResolver *)initWithMaxIterations:(unsigned int)maxIterations
 {
-    self = [super init];
-    self.maxIterations = maxIterations;
+    if (self = [super init]) {
+        _maxIterations = maxIterations;
+    }
     return self;
 }
 

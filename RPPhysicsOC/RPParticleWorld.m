@@ -13,13 +13,14 @@
 
 - (RPParticleWorld *)init
 {
-    self = [super init];
-    self.particles = [[NSMutableArray alloc] init];
-    self.contactGenerators = [[NSMutableArray alloc] init];
-    self.contacts = [[NSMutableArray alloc] init];
-    self.forceRegistry = [[RPParticleForceRegistry alloc] init];
-    self.contactResolver = [[RPParticleContactResolver alloc]
+    if (self = [super init]) {
+        _particles = [[NSMutableArray alloc] init];
+        _contactGenerators = [[NSMutableArray alloc] init];
+        _contacts = [[NSMutableArray alloc] init];
+        _forceRegistry = [[RPParticleForceRegistry alloc] init];
+        _contactResolver = [[RPParticleContactResolver alloc]
                             initWithMaxIterations:0];
+    }
     return self;
 }
 

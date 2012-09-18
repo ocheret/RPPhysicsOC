@@ -28,11 +28,12 @@
                                  normal:(RPVector3 *)normal
                             penetration:(RPReal)penetration
 {
-    self = [super init];
-    self.particleA = particleA;
-    self.particleB = particleB;
-    self.restitution = restitution;
-    *self.normalRef = *normal;
+    if (self = [super init]) {
+        _particleA = particleA;
+        _particleB = particleB;
+        _restitution = restitution;
+        _normal = *normal;
+    }
     return self;
 }
 

@@ -43,12 +43,13 @@
                      inverseMass:(RPReal)inverseMass
                          damping:(RPReal)damping
 {
-    self = [super init];
-    if (position) *self.positionRef = *position;
-    if (velocity) *self.velocityRef = *velocity;
-    if (acceleration) *self.accelerationRef = *acceleration;
-    self.inverseMass = inverseMass;
-    self.damping = damping;
+    if (self = [super init]) {
+        if (position) _position = *position;
+        if (velocity) _velocity = *velocity;
+        if (acceleration) _acceleration = *acceleration;
+        _inverseMass = inverseMass;
+        _damping = damping;
+    }
     return self;
 }
 

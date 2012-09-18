@@ -19,9 +19,11 @@
                                springConstat:(RPReal)springConstant
                                restingLength:(RPReal)restingLength
 {
-    *(self.anchorRef) = *anchor;
-    self.springConstant = springConstant;
-    self.restingLength = restingLength;
+    if (self = [super init]) {
+        _anchor = *anchor;
+        _springConstant = springConstant;
+        _restingLength = restingLength;
+    }
     return self;
 }
 

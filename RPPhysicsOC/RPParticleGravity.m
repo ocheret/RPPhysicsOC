@@ -17,7 +17,9 @@
 
 - (RPParticleGravity *)initWithGravity:(RPVector3 *)gravityRef
 {
-    _gravity = *gravityRef;
+    if (self = [super init]) {
+        _gravity = *gravityRef;
+    }
     return self;
 }
 

@@ -40,16 +40,18 @@ static RPRandom *_repeatableInstance = nil;;
 
 - (RPRandom *)init
 {
-    self = [super init];
-    unsigned seed = (unsigned)arc4random();
-    [self setup:seed];
+    if (self = [super init]) {
+        unsigned seed = (unsigned)arc4random();
+        [self setup:seed];
+    }
     return self;
 }
 
 - (RPRandom *)initWithSeed:(unsigned int)seed
 {
-    self = [super init];
-    [self setup:seed];
+    if (self = [super init]) {
+        [self setup:seed];
+    }
     return self;
 }
 
