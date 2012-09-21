@@ -189,6 +189,87 @@ RPMatrix3x4InverseXFormDirection(RPVector3 *vout,
     return vout;
 }
 
+/**
+ * Changes the basis of a tensor using the rotational part of a transformation
+ * matrix, ignoring any translational components.  The change of basis is done
+ * using:
+ *                             -1                     T
+ * xformed = xfm * tensor * xfm   - xfm * tensor * xfm
+ *
+ * since the transpose of the rotation only xfm is the same as the inverse.
+ */
+static __inline__ RPMatrix3 *
+RPMatrix3x4XFormTensor(RPMatrix3 *xformed, RPMatrix3 *tensor, RPMatrix3x4 *xfm)
+{
+    // Calcualte m = tensor * transpose(xfm) using only rotation
+    RPMatrix3 m = {
+        tensor->m00 * xfm->m00 +
+        tensor->m10 * xfm->m10 +
+        tensor->m20 * xfm->m20,
+        tensor->m01 * xfm->m00 +
+        tensor->m11 * xfm->m10 +
+        tensor->m21 * xfm->m20,
+        tensor->m02 * xfm->m00 +
+        tensor->m12 * xfm->m10 +
+        tensor->m22 * xfm->m20,
+
+        tensor->m00 * xfm->m01 +
+        tensor->m10 * xfm->m11 +
+        tensor->m20 * xfm->m21,
+        tensor->m01 * xfm->m01 +
+        tensor->m11 * xfm->m11 +
+        tensor->m21 * xfm->m21,
+        tensor->m02 * xfm->m01 +
+        tensor->m12 * xfm->m11 +
+        tensor->m22 * xfm->m21,
+
+        tensor->m00 * xfm->m02 +
+        tensor->m10 * xfm->m12 +
+        tensor->m20 * xfm->m22,
+        tensor->m01 * xfm->m02 +
+        tensor->m11 * xfm->m12 +
+        tensor->m21 * xfm->m22,
+        tensor->m02 * xfm->m02 +
+        tensor->m12 * xfm->m12 +
+        tensor->m22 * xfm->m22
+    };
+
+    // Calculate xformed = xfm * m
+    *xformed = (RPMatrix3){
+        xfm->m00 * m.m00 +
+        xfm->m10 * m.m01 +
+        xfm->m20 * m.m02,
+        xfm->m01 * m.m00 +
+        xfm->m11 * m.m01 +
+        xfm->m21 * m.m02,
+        xfm->m02 * m.m00 +
+        xfm->m12 * m.m01 +
+        xfm->m22 * m.m02,
+
+        xfm->m00 * m.m10 +
+        xfm->m10 * m.m11 +
+        xfm->m20 * m.m12,
+        xfm->m01 * m.m10 +
+        xfm->m11 * m.m11 +
+        xfm->m21 * m.m12,
+        xfm->m02 * m.m10 +
+        xfm->m12 * m.m11 +
+        xfm->m22 * m.m12,
+
+        xfm->m00 * m.m20 +
+        xfm->m10 * m.m21 +
+        xfm->m20 * m.m22,
+        xfm->m01 * m.m20 +
+        xfm->m11 * m.m21 +
+        xfm->m21 * m.m22,
+        xfm->m02 * m.m20 +
+        xfm->m12 * m.m21 +
+        xfm->m22 * m.m22
+    };
+
+    return xformed;
+}
+
 static __inline__ RPReal
 RPMatrix3x4Determinant(RPMatrix3x4 *me)
 {

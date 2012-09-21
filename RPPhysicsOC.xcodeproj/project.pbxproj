@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1326F74915F7A77900A346E9 /* RPParticleContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1326F74815F7A77900A346E9 /* RPParticleContactTests.m */; };
 		133FA3AD16078E17000855C1 /* RPMatrix3x4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 133FA3AC16078E17000855C1 /* RPMatrix3x4Tests.m */; };
+		133FA3B1160900E0000855C1 /* RPRigidBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 133FA3AF160900DF000855C1 /* RPRigidBody.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		133FA3B2160900E0000855C1 /* RPRigidBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 133FA3B0160900DF000855C1 /* RPRigidBody.m */; };
 		1352493815F29A6200B98CF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352493715F29A6200B98CF6 /* Foundation.framework */; };
 		1352494715F29A6300B98CF6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494615F29A6300B98CF6 /* SenTestingKit.framework */; };
 		1352494915F29A6300B98CF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352494815F29A6300B98CF6 /* UIKit.framework */; };
@@ -95,6 +97,8 @@
 		1326F74815F7A77900A346E9 /* RPParticleContactTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPParticleContactTests.m; sourceTree = "<group>"; };
 		133FA3AB16078E17000855C1 /* RPMatrix3x4Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPMatrix3x4Tests.h; sourceTree = "<group>"; };
 		133FA3AC16078E17000855C1 /* RPMatrix3x4Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPMatrix3x4Tests.m; sourceTree = "<group>"; };
+		133FA3AF160900DF000855C1 /* RPRigidBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPRigidBody.h; sourceTree = "<group>"; };
+		133FA3B0160900DF000855C1 /* RPRigidBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPRigidBody.m; sourceTree = "<group>"; };
 		1352493415F29A6200B98CF6 /* libRPPhysicsOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRPPhysicsOC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1352493715F29A6200B98CF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1352493B15F29A6200B98CF6 /* RPPhysicsOC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RPPhysicsOC-Prefix.pch"; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 				1375F1F715FD4BF400EDE086 /* RPQuaternion.m */,
 				1377812915F51672003623C6 /* RPRandom.h */,
 				1377812A15F51672003623C6 /* RPRandom.m */,
+				133FA3AF160900DF000855C1 /* RPRigidBody.h */,
+				133FA3B0160900DF000855C1 /* RPRigidBody.m */,
 				1352496315F2CD1E00B98CF6 /* RPTypes.h */,
 				1352496715F2D43F00B98CF6 /* RPVector3.h */,
 				1352496815F2D43F00B98CF6 /* RPVector3.m */,
@@ -340,6 +346,7 @@
 				1375F1F415FD408700EDE086 /* RPMatrix3.h in Headers */,
 				1375F1F815FD4BF400EDE086 /* RPQuaternion.h in Headers */,
 				1375F1FF1600EF1300EDE086 /* RPMatrix3x4.h in Headers */,
+				133FA3B1160900E0000855C1 /* RPRigidBody.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +470,7 @@
 				1375F1F515FD408700EDE086 /* RPMatrix3.m in Sources */,
 				1375F1F915FD4BF400EDE086 /* RPQuaternion.m in Sources */,
 				1375F2001600EF1300EDE086 /* RPMatrix3x4.m in Sources */,
+				133FA3B2160900E0000855C1 /* RPRigidBody.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
